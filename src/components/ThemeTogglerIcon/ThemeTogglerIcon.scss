@@ -1,0 +1,14 @@
+.theme-toggler-icon{
+   display: flex;
+
+    circle{
+        transition: 0.5s;
+    }
+
+    &[theme = 'light']{
+
+        .toggler-circle{
+            transform: translateX(-47%);
+        }
+    }
+}

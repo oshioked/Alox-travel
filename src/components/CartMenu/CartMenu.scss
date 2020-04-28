@@ -1,0 +1,114 @@
+.cart-menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+
+    .container{
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+
+        .cart-menu-content{
+            height: 100%;
+            width: 70%;
+            transition: 0.5s;
+            margin-left: auto;
+            position: relative;
+
+            .header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.096);
+
+                .head-title{
+                    display: flex;
+                    align-items: center;
+
+                    h2{
+                        margin: 0;
+                        margin-left: 20px;
+                        font-weight: 500;
+                    }
+                }
+
+                .cancel-btn{
+                    height: 22px;
+                }
+            }
+
+            .section{
+                padding: 7% 5.5%;
+            }
+
+            hr{
+                margin: 0;
+            }
+
+            .products-display{
+                overflow: scroll;
+                max-height: 75%;
+                
+
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+
+            .checkout-button-container{
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                
+                button{
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+
+.cart-menu[display = 'hide']{
+    pointer-events: none;
+
+    .container{
+        transition: 1s;
+        opacity: 0;
+        .cart-menu-content{
+            transition: 1s;
+            transform: translateX(100%);
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+    .cart-menu{
+        .container{
+
+            .cart-menu-content{
+                width: 45%;
+
+                .section{
+                    padding: 5.5% 7%;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1020px){
+    .cart-menu{
+        .container{
+
+            .cart-menu-content{
+                width: 35%;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.gallery-section{
+    padding: 5.5% 0 7% 5.5%;
+    transition: 1s;
+
+    .container{
+
+        .gallery-section-content{
+
+            .titles{
+                padding-right: 20px;
+
+                h2{
+                    font-size: 31px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .gallery-row-container{
+
+
+                .gallery-row{
+                    display: flex;
+                    overflow: scroll;
+                    max-height: 220px;
+
+                    &::-webkit-scrollbar{
+                        display: none;
+                    }
+
+                    .posts{
+
+                        max-width: fit-content;
+                        margin: 0 10px;
+                        display: flex;
+                        width: fit-content;
+                        min-width: 220px;
+
+                        &:first-child{
+                            margin-left: 0;
+                        }
+
+                        img{
+                            height: 100%;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+
+    .gallery-section{
+        .container{
+            .gallery-section-content{
+                .titles{
+
+                }
+                .gallery-row-container{
+
+                    .gallery-row{
+
+                    
+                    }
+                }
+            }
+        }
+    }
+}

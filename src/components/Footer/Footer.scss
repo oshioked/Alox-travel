@@ -1,0 +1,101 @@
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5.5%;
+    padding-top: 40px;
+
+    .mailing-list-form{
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        input{
+            height: 40px;
+            width: 75%;
+            border: none;
+            font-size: 0.7rem;
+            padding-left: 35px;
+            font-family: Calibri, 'Gill Sans', 'Gill Sans MT',  'Trebuchet MS', sans-serif;
+        }
+
+        button{
+            height: 40px;
+            width: 25%;
+            padding: 0 5px;
+            font-size: 0.6rem;
+            margin-left: 10px;
+        }
+    }
+
+    .footer-links{
+        display: flex;
+        margin-top: 30px;
+
+        ul{
+            
+            li{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .contact-us-block{
+        margin: auto;
+        order: 1;
+
+        h4{
+            margin: 10px 0;
+        }
+        p{
+            margin: 5px 0;
+        }
+
+        .social-icons{
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+            width: fit-content;
+
+            li{
+                margin-right: 25px;
+            }
+
+            
+
+            path{
+                fill: white;
+            }
+        }
+    }
+
+
+
+}
+
+
+@media only screen and (min-width: 768px){
+    .footer{
+        justify-content: space-between;
+
+        .mailing-list-form{
+            order: 1;
+            width: 40%;
+        }
+
+        .footer-links{
+            width: 33%;
+            justify-content: space-between;
+            font-size: 14px;
+
+            ul{
+                padding: 0;
+            }
+        }
+
+        .contact-us-block{
+            font-size: 14px;
+            width: 20%;
+            margin: auto 0;
+        }
+    }
+}

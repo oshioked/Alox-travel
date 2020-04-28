@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import store from './Redux/store';
+
+
+import OnPathChange from './utilities/Router/OnPathChange.component';
+import ThemeProvider from './contextProviders/ThemeProvider/ThemeProvider';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider>
+    <BrowserRouter>
+      <OnPathChange/>
+      <React.StrictMode>
+        <Provider store = {store}>
+          <App/>
+        </Provider>
+      </React.StrictMode>
+    </BrowserRouter>
+  </ThemeProvider>
+  ,
+
   document.getElementById('root')
 );
 

@@ -1,0 +1,55 @@
+.home-header{
+    height: 100vh;
+    background: url('./Images/headerBg.png');
+    background-position: center;
+    background-size: cover;
+    padding: 0 5.5%;
+    position: relative;
+
+    *{
+        color: white !important;
+    }
+
+    
+
+    .container{
+        height: 100%;
+
+        .home-header-content{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .header-description{
+
+                h1{
+                    font-size: 40px;
+                }
+            }  
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .home-header{
+        height: fit-content;
+        max-height: 100vh;
+
+        .container{
+            padding-top: 55%;
+            height: 0;
+            
+
+
+            .home-header-content{
+                position: absolute;
+                top: 0;
+
+                .header-description{
+                    width: 55%;
+                }
+            }
+        }
+    }
+}

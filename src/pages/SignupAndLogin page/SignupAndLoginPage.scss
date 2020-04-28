@@ -1,0 +1,225 @@
+.signup-and-login-page{
+    background: url('./images/bg.png');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .container{
+        height: 100%;
+
+        .welcome-block-container{
+            height: 100%;
+
+            @media only screen and (max-width: 768px){
+               background: transparent !important; 
+
+               *{
+                   color: white ! important;
+                   fill: white;
+               }
+
+               button{
+                   border: 2px solid white;
+               }
+            }
+            
+
+            .welcome-block{
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+        
+                .block-content{
+                    text-align: center;
+
+                    button{
+                        display: block;
+                        margin-top: 15px
+
+                        
+                    }
+                }
+            }
+        }
+        
+
+        .form-block{
+            height: 100%;
+            padding: 70px 5.5% 20px;
+
+            .form-container{
+                
+                height: 100%;
+
+                .form{
+                    background: rgba(238, 238, 238, 0.6);
+                    height: 100%;
+                    padding: 5.5%;
+                    position: relative;
+                    
+                    h2{
+                        text-align: center;
+                    }
+
+                    input:not([type = 'checkbox']){
+                        height: 45px;
+                        border: none;
+                        padding: 20px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        font-size: 14px;
+                        font-weight: bold;
+                        background: white;
+                        color: #191F29;
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+
+                    input[type = 'checkbox']{
+                        background: transparent;
+                        border: 1px solid #191F29;
+                    }
+
+
+
+
+                    &::before,
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        height: 51%;
+                        width: 100%;
+                        background: white;
+                        right: 0;
+                        left: 0;
+                        transition: 0.5s;
+                        transform: scaleY(0);
+                    }
+                    &::before{
+                        transform-origin: top;
+                        top: 0;
+                    }
+                    &::after{
+                        bottom: 0;
+                        transform-origin: bottom;
+                    }
+                    &[animate = 'true']{
+                        &::after,
+                        &::before{
+                           transform: scaleY(1)
+                        }
+                    }
+                    &[animate = 'false']{
+                        &::after,
+                        &::before{
+                           transform: scaleY(0)
+                        }
+                    }
+
+                    
+                    
+
+                    &[theme= 'dark']{
+                        background: rgba(38, 46, 60, 0.5);
+
+                        input:not([type = 'checkbox']){
+                            background: #191F29;
+                            color: white;
+                        }
+
+                        input[type = 'checkbox']{
+                            border: 1px solid white;
+                        }
+
+
+                        &::before,
+                        &::after{
+                            background: #191F29;
+                        }
+                    }
+                }
+            }
+        }
+
+        .welcome-block-container[display = 'true'],
+        .form-block[display = 'true']{
+            display: block;
+        }
+
+        .welcome-block-container[display = 'false'],
+        .form-block[display = 'false']{
+            display: none;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 768px){
+
+    .signup-and-login-page{
+        background: url('./images/bg big.png');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+
+        .container{
+            max-width: 60%;
+            min-width: 650px;
+            margin:0 auto;
+            display: flex;
+            max-height: 70%;
+            min-height: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .welcome-block-container{
+                width: 50%;
+
+                .welcome-block{
+
+
+                    .block-content{
+                        button{
+                            
+                            border: 2px solid #191F29;
+                        } 
+                    }
+
+                    &[theme = 'dark']{
+                        .block-content{
+                            button{
+                                border: 2px solid white
+                            }
+                        }
+                    }
+                }
+                
+                
+                
+            }
+
+            .form-block{
+                width: 50%;
+                padding: 0;
+                // overflow: scroll;
+
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+
+            .welcome-block-container[display= 'false'],
+            .form-block[display = 'false']{
+                display: block;
+            }
+
+
+        }
+
+        
+    }
+}

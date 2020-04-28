@@ -1,0 +1,26 @@
+.cart-menu-card{
+    width: 100%;
+    display: flex;
+    padding: 7% 0;
+    min-height: 120px;
+
+    .product-image{
+        width: 35%;
+    }
+
+    .product-details{
+        width: 70%;
+        margin-left: 4%;
+
+        .product-name{
+            margin: 0;
+            font-size: 12px;
+            font-weight: 200;
+        }
+
+        p{
+            margin:0;
+            margin-top: 5.5%;
+        }
+    }
+}

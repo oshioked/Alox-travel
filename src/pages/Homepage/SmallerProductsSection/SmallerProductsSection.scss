@@ -1,0 +1,116 @@
+.smaller-products-section{
+    padding: 8%;
+
+    .section-container{
+
+        .product{
+            margin-bottom: 50px;
+
+            .container{
+
+                .product-content{
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 0;
+                    width: 100%;
+                    height: fit-content;
+
+                    .pc{
+                        display: none;
+                    }
+
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .description-set-title{
+                        order: -1;
+                    }
+
+                    button{
+                        margin-top: 20px;
+                        width: 100%;
+                    }
+                    
+                }
+            }
+        }
+
+    }
+}
+
+
+
+@media only screen and (min-width: 768px){
+    .smaller-products-section{
+
+        .section-container{
+
+            .product{
+                margin-bottom: 100px;
+
+                .container{
+                    padding-top: 35%;
+
+                    .product-content{
+                        position: absolute;
+                        top: 0;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .description-set-title,
+                        .description-set-detail,
+                        button{
+                            display: none;
+                        }
+
+                        .pc{
+                            display: flex;
+                        }
+
+                        img{
+                            width: 50%;
+                            height: stretch;
+                        }
+
+                        .description-set{
+                            width: 40%;
+                            
+                            .description-set-title,
+                            .description-set-detail,
+                            button{
+                                display: block;
+                            }
+
+                            .description-set-title{
+                                font-size: 32px;
+                            }
+
+                            .description-set-detail{
+                                font-size: 16px;
+                                margin-bottom: 15px;
+                            }
+
+                            button{
+                                width: fit-content;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(even){
+                    .product-content{
+                        flex-direction: row-reverse;
+                    }
+                    
+                }
+
+                &:last-child{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

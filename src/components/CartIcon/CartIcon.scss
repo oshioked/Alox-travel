@@ -1,0 +1,39 @@
+.cart-icon{
+    position: relative;
+    height: 25px;
+
+    .cart-item-count{
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        margin: 0;
+        font-size: 12px;
+        width: 12px;
+        line-height: 10px;
+        text-align: center;
+        border-radius: 12px;
+        padding: 2px;
+        background: #191f29;
+        color: white;
+    }
+
+    &[theme = 'dark']{
+
+        .cart-item-count{
+            color: #191f29;
+            background: white;
+        }
+    }
+
+
+
+    button{
+        padding: 0;
+        height: 100%;
+        display: flex;
+
+        img{
+            width: 100%;
+        }
+    }
+}
