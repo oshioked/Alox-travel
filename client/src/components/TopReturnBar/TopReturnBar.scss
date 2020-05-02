@@ -1,0 +1,12 @@
+.top-return-bar{
+    height: 40px;
+    padding: 0 5.5%;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px){
+    .top-return-bar{
+        height: 60px
+    }
+}

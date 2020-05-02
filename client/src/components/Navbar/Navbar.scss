@@ -1,0 +1,45 @@
+.main-nav-bar{
+    box-sizing: border-box;
+    padding: 0 5.5%;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -9px 0px 5px #00000036;
+    z-index: 3;
+
+    &[transparent = 'true']{
+        background: transparent !important;
+        box-shadow: none;
+
+        &[pagePathName = '/'],
+        &[pagePathName = '/login']{
+            *{
+                fill: white !important;
+            }
+        }
+    }
+
+
+    #navbar-toggler-btn{
+        height: 20px;
+    }
+    
+
+    button{
+        padding: 0;
+        transition: 0s;
+    }
+
+    .brandName{
+        height: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .main-nav-bar{
+        height: 80px;
+    }
+}

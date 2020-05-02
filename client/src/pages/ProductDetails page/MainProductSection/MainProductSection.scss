@@ -1,0 +1,37 @@
+.main-product-section{
+    
+    .image-container{
+        width: 100%;
+        max-height: 70vh;
+        
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .product-detail-section{
+        padding:  5.5%;   
+        
+        .block1{
+            h3{
+                margin: 0;
+            }
+        }
+    }
+
+    
+    .buttons-section{
+        padding:  5.5%; 
+        text-align: center;
+
+        button{
+            width: 100%;
+            margin-bottom: 5.5%;
+        }
+    }
+
+
+
+}

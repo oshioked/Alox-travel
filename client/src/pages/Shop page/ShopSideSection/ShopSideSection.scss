@@ -1,0 +1,16 @@
+.side-section{
+    height: calc(100vh - 80px);
+    display: none;
+    position: sticky;
+    top: 80px;
+    width: 17%;
+}
+
+
+
+
+@media only screen and (min-width: 769px){
+    .side-section{
+        display: block;
+    }
+}

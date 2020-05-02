@@ -1,0 +1,207 @@
+.side-menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+
+    .container{
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+
+        .side-menu-content{
+            height: 100%;
+            width: 80%;
+            transition: 0.5s;
+        
+            
+
+            .header{
+                display: flex;
+                justify-content: space-between;
+
+                .alox-icon{
+                    svg{
+                        height: 25px;
+                        width: auto;
+                    }
+                    
+                }
+
+                .cancel-btn{
+                    height: 22px;
+                }
+
+
+            }
+            
+            .main-section{
+                height: 100%;
+                overflow: scroll;
+
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+
+            .section{
+                padding: 5.5%;
+
+                .option-set{
+                    display: flex;
+                    align-items: center;
+                    margin: 17px 0;
+
+
+                    &:first-child{
+                        margin-top: 0;
+                    }
+
+                    &:last-child{
+                        margin-bottom: 5px;
+                    }
+
+                    svg,
+                    img{
+                        height: 20px;
+                        width: auto;
+                    }
+
+                    h4{
+                        margin: 0;
+                        margin-left: 40px;
+                        font-weight: 500;
+                    }
+
+                    .links-with-answers{
+                        width: stretch;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .answer{
+                            margin: 0;
+                        }
+                    }
+
+                    input{
+                        background: transparent;
+                        border: none;
+                        margin-left: 40px;
+                        color: rgba(91, 86, 100, 0.726);
+                        font-size: 15px;
+                        position: relative;
+                        width: 100%;
+                        border-color: transparent;
+                        transition: 0.5s;
+                        font-weight: 500;
+                        transition: 1s;
+
+
+                        &:focus{
+                            outline: none;
+                            border-bottom: 0.5px solid rgba(71, 63, 63, 0.726);
+                        }
+
+                        &::placeholder{
+                            font-size: 16px;
+                            color: #191f29;
+                        }
+
+                        &[theme = 'dark']{
+                            &::placeholder{
+                                color: white;
+                            }
+                            &:focus{
+                                border-bottom: 0.5px solid rgba(255, 255, 255, 0.726);
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+            .section-title{
+                margin: 0 5.5%;
+                color: #757575;
+            }
+
+            hr{
+                margin: 0;
+            }
+        }
+
+        .menu-concealer{
+            height: 100%;
+            width: 20%;
+        }
+    }
+}
+
+
+
+.side-menu[display = 'hide']{
+    pointer-events: none;
+
+    .container{
+        transition: 1s;
+        opacity: 0;
+        .side-menu-content{
+            transition: 1s;
+            transform: translateX(-100%);
+        }
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 768px){
+    .side-menu{
+        .container{
+
+            .side-menu-content{
+                width: 50%;
+
+                .section{
+                    padding: 5.5% 7%;
+    
+                    .option-set{
+                        h4{
+                            margin: 0;
+                            margin-left: 70px;
+                            font-weight: 500;
+                        }
+
+                        input{
+                            margin-left: 70px;
+                        }
+                    }
+                }
+            }
+            .menu-concealer{
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1020px){
+    .side-menu{
+        .container{
+
+            .side-menu-content{
+                width: 35%;
+            }
+
+            .menu-concealer{
+               width: 65%; 
+            }
+            
+        }
+    }
+}
