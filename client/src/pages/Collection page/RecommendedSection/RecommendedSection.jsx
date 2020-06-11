@@ -15,7 +15,6 @@ const RecommendedSection = () =>{
         <div className = 'recommended-section shade2bg'>
             <div className = 'section-header'>
                 <h3>RECOMMENDED</h3>
-                <p>View All</p>
             </div>
             <div className = 'recommended-product-row'>
                 {

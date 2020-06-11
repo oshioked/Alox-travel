@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Welcome2.scss';
 import DescriptionSet from '../../../components/DescriptionSet/DescriptionSet';
 
 const Welcome2 = () =>{
+
+    const [product, setProduct] = useState({
+        Id: 'selfadjustwatch'
+    })
+
     return(
         <div className = 'welcome2'>
             <div className = 'image-darkener' />
@@ -11,6 +16,7 @@ const Welcome2 = () =>{
                     <div className = 'description-set'>
                         <DescriptionSet
                             title = 'The Self-adjusting Watch.'
+                            btnLinkTo = {`/product/${product.Id}`}
                             detail = 'Where ever you travel to, whatever time zone, using our upgraded GPS system, this watch automatically change time zone.'
                             btnValue = 'PREORDER NOW'
                         />                    

@@ -13,14 +13,15 @@ const SmallerProductsSection = () =>{
                                 <DescriptionSet 
                                     title = 'The Travel Legend'
                                     detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
-                                    btnValue = 'SHOP NOW'                        
+                                    btnValue = 'ORDER NOW'   
+                                    btnLinkTo = '/product/travel legend'                     
                                 />
                                 <div className = 'description-set pc'>
                                     <DescriptionSet
                                         title = 'The Travel Legend'
                                         detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
-                                        btnValue = 'SHOP NOW'
-                            
+                                        btnValue = 'ORDER NOW'
+                                        btnLinkTo = '/product/travel legend'
                                     />
                                 </div>
                                 
