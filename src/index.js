@@ -6,20 +6,24 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
-import store from './Redux/store';
+import {store, persistor} from './Redux/store';
 
 
 import OnPathChange from './utilities/Router/OnPathChange.component';
 import ThemeProvider from './contextProviders/ThemeProvider/ThemeProvider';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.render(
   <ThemeProvider>
     <BrowserRouter>
       <OnPathChange/>
       <React.StrictMode>
-        <Provider store = {store}>
-          <App/>
-        </Provider>
+        <PersistGate persistor = {persistor}>
+          <Provider store = {store}>
+            <App/>
+          </Provider>
+        </PersistGate>
+        
       </React.StrictMode>
     </BrowserRouter>
   </ThemeProvider>

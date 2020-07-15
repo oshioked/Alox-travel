@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import './SignupAndLoginPage.scss';
+import './AuthPage.scss';
 
 
 import WelcomeBlock from './WelcomeBlock/WelcomeBlock';
@@ -7,7 +7,7 @@ import LoginForm from './LoginForm/LoginForm';
 import SignupForm from './SignupForm/SignupForm';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
 
-const SignUpAndLoginPage = ()=>{
+const AuthPage = ()=>{
 
 
     const [currentForm, setCurrentForm] = useState(window.localStorage.getItem('SignInLoginInCurrentForm'));
@@ -64,4 +64,4 @@ const SignUpAndLoginPage = ()=>{
     )
 }
 
-export default SignUpAndLoginPage;
+export default AuthPage;

@@ -1,10 +1,9 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 
 
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './pages/Homepage/Homepage';
 import Collectionpage from './pages/Collection page/Collectionpage';
-import SignUpAndLoginPage from './pages/SignupAndLogin page/SignupAndLoginPage';
 import SideMenu from './components/SideMenu/SideMenu';
 import CartMenu from './components/CartMenu/CartMenu';
 import ShopPage from './pages/Shop page/ShopPage';
@@ -12,18 +11,41 @@ import ProductDetailsPage from './pages/ProductDetails page/ProductDetailsPage';
 import CheckoutPage from './pages/Checkout page/CheckoutPage';
 
 
-import {Switch, Route, Redirect}  from 'react-router-dom';
-import {connect} from 'react-redux'
+import {Switch, Route, Redirect, useHistory}  from 'react-router-dom';
+import { useDispatch, useSelector} from 'react-redux'
 import { ThemeContext } from './contextProviders/ThemeProvider/ThemeProvider';
 import './App.scss';
+import AuthPage from './pages/Auth page/AuthPage';
+import { auth, saveUserToFirestore } from './firebase/firebase';
+import { authUser, logUserOut } from './Redux/User/user.actions';
 
 
 
 
 
 
-const App = ({isUserSignedIn})=> {
+const App = ()=> {
   const {currentTheme} = useContext(ThemeContext);
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.User);
+  const isUserSignedIn = Boolean(user);
+  console.log(useHistory())
+  const {push} = useHistory();
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (userAuth) =>{
+      if(userAuth){
+        const userRef = await saveUserToFirestore(userAuth);
+        await userRef.onSnapshot(snapshot =>{
+          const {email, displayName} = snapshot.data();
+          dispatch(authUser({id: snapshot.id, email, name: displayName}));
+          push('/');
+        })
+      }else{
+        dispatch(logUserOut());      
+      }
+    })
+  }, [dispatch])
   
   return (
     <div theme = {currentTheme} className = 'App shade1bg'>
@@ -37,7 +59,7 @@ const App = ({isUserSignedIn})=> {
         <Route exact path = '/login' render = {()=> 
           isUserSignedIn
           ? (<Redirect to = '/'/>)
-          : (<SignUpAndLoginPage/>)
+          : (<AuthPage/>)
         }
         />
         <Route exact path = '/product/:id' component = {ProductDetailsPage}/>
@@ -47,8 +69,4 @@ const App = ({isUserSignedIn})=> {
   )
 }
 
-const mapStateToProps = (state) =>({
-  isUserSignedIn: Boolean(state.User.currentUser)
-})
-
-export default connect(mapStateToProps)(App);
+export default App;

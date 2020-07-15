@@ -15,15 +15,6 @@ const ShopSideSection = () =>{
                         <li>Accessories</li>
                     </ul>
                 </div>
-                <div className = 'option-block filter-block'>
-                    <h3 className = "option-title-text">FILTER BY</h3>
-                    <ul>
-                        <li>Backpacks</li>
-                        <li>Crossbody bags</li>
-                        <li>Luggages</li>
-                        <li>Accessories</li>
-                    </ul>
-                </div>
             </div>
         </div>
     )

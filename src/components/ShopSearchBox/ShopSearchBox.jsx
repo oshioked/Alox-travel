@@ -9,32 +9,19 @@ const ShopSearchBox = (props) =>{
         }
     }
 
-    // const styles = {
-    //     container: {
-    //         height: '40px'
-    //     },
-    //     inputStyles: {
-    //         position: 'relative',
-    //         borderRadius: '5px 0 0 5px',
-    //         width: '380px',
-    //         height: '100%',
-    //         paddingLeft: '10px'
-    //     },
-    //     button: {
-    //         borderRaduis: '0 5px 5px 0',
-    //         height: '100%',
-
-    //     }
-    // }
     return(
-        <div className = 'search-box'>
-            <input 
+        <div className = 'shop-search-box'>
+            <input
+                className = 'search-box-input'
                 type = 'text' 
                 onChange = {props.onChange} 
                 placeholder = 'Search products, categories, color, etc'
                 onKeyPress = {keyPressHandler} 
             />
-            <button><SearchIcon/></button>
+            <button className = 'search-icon-container' >
+                <SearchIcon/>
+            </button>
+            
         </div>  
     )
 }

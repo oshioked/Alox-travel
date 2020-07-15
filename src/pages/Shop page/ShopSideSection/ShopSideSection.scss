@@ -23,7 +23,8 @@
 
                 li{
                     padding: 10px;
-                    padding-left: 50px;
+                    padding-left: 20%;
+                    font-size: 15px;
                     width: 100%;
                     cursor: pointer;
 
@@ -33,16 +34,6 @@
                 }
 
             }
-        }
-
-        .filter-block{
-
-            ul{
-                li{
-                  text-decoration: dotted;  
-                }
-            }
-            
         }
     }
 }

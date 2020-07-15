@@ -17,8 +17,7 @@ const ShopPage = ({match, fetchProductsByCollection, fetchProductsBySearch, prod
         }else if(method === 'search'){
             fetchProductsBySearch(key)
         }
-    }, [])
-
+    }, [match, fetchProductsByCollection, fetchProductsBySearch])
 
     return(
         <div className = 'shop-page'>

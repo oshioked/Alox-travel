@@ -1,13 +1,15 @@
 .secBtn{
     height: 45px;   
-    
     box-sizing: border-box; 
     font-family: Helvetica;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     padding: 0;
-    
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s !important;
+    // transform-origin: left;
      
 
     border: 2px solid;
@@ -21,4 +23,10 @@
         justify-content: center;
         color: inherit !important;
     }
+
+    &:hover{
+        transform: scaleX(1.029);
+
+    }
+
 }

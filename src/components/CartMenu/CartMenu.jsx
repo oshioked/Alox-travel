@@ -47,7 +47,7 @@ const CartMenu = ()=>{
                         <div className = 'section products-display'>
                         {
                             cartItems.map((item, i)=>
-                                <React.Fragment>
+                                <React.Fragment key = {i}>
                                     <CartMenuCard item = {item}/><hr/>
                                 </React.Fragment>
                             )

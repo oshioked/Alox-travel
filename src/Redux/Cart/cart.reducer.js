@@ -1,5 +1,6 @@
-import {cartTypes} from './cart.types';
-import {addItemToCart} from './cart.utils';
+
+import {addItemToCart, clearItemFromCart, reduceItemQty} from './cart.utils';
+import { cartTypes } from './cart.actions';
 
 const initialState = {
     display: false,
@@ -17,6 +18,16 @@ export const Cart = (state = initialState, action) =>{
             return({
                 ...state,
                 cartItems: addItemToCart(action.payload, state.cartItems)
+            })
+        case cartTypes.CLEAR_ITEM:
+            return({
+                ...state,
+                cartItems: clearItemFromCart(action.payload, state.cartItems)
+            })
+        case cartTypes.REDUCE_ITEM:
+            return({
+                ...state,
+                cartItems: reduceItemQty(action.payload, state.cartItems)
             })
         default: 
             return state

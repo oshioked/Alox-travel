@@ -7,7 +7,8 @@ import {ThemeContext} from '../../../contextProviders/ThemeProvider/ThemeProvide
 import ShopSearchBox from '../../../components/ShopSearchBox/ShopSearchBox';
 
 const CategorySelect = () =>(
-    <div>
+    <div className = 'cat-select-container'>
+        <h5>CATEGORY: </h5>
         <select className = 'category-select'>
             <option>BACKPACKS</option>
             <option>LUGGAGES</option>
@@ -30,7 +31,7 @@ const SortSelect = () =>{
 
 const CategoryDescription = () =>{
     return(
-        <div>
+        <div className = 'cat-description'>
             <h1>BACKPACKS</h1>
             <p>Ullamco sunt quis qui eiusmod ea officia. Consectetur commodo ad ad tempor incididunt ut et nulla. Qui aute laboris veniam dolor ullamco cillum cupidatat do amet sunt est minim magna esse.</p>
         </div>
@@ -39,17 +40,20 @@ const CategoryDescription = () =>{
 
 
 const MobileSectionHead = () =>{
-    
     return(
-        <div className = 'section-head'>
-           <ShopSearchBox/>
-           <div>
-               <SortSelect/>
+        <div className = 'mobile-section-head'>
+            <div className = 'search-box-container'>
+                <ShopSearchBox/>
+            </div>
+            <CategoryDescription/>
+           <div className = 'sort-cat-section'>
                <CategorySelect/>
+               <SortSelect/>
            </div>
         </div>
     )
 }
+
 const ShopMainSection = () =>{
     return(
         <div className = 'shop-main-section'>

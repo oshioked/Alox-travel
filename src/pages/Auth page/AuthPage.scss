@@ -59,30 +59,16 @@
                     height: 100%;
                     padding: 5.5%;
                     position: relative;
+                    padding: 10px 7%;
                     
                     h2{
                         text-align: center;
-                    }
-
-                    input:not([type = 'checkbox']){
-                        height: 45px;
-                        border: none;
-                        padding: 20px;
-                        font-family: Helvetica, Arial, sans-serif;
-                        font-size: 14px;
-                        font-weight: bold;
-                        background: white;
-                        color: #191F29;
-                        width: 100%;
-                        margin-bottom: 10px;
                     }
 
                     input[type = 'checkbox']{
                         background: transparent;
                         border: 1px solid #191F29;
                     }
-
-
 
 
                     &::before,
@@ -122,12 +108,7 @@
                     
 
                     &[theme= 'dark']{
-                        background: rgba(38, 46, 60, 0.5);
-
-                        input:not([type = 'checkbox']){
-                            background: #191F29;
-                            color: white;
-                        }
+                        background: rgba(38, 46, 60, 0.637);
 
                         input[type = 'checkbox']{
                             border: 1px solid white;
@@ -205,9 +186,13 @@
             .form-block{
                 width: 50%;
                 padding: 0;
-                // overflow: scroll;
 
                 &::-webkit-scrollbar{
+                    display: none;
+                }
+
+
+                .switch-form-bottom-text{
                     display: none;
                 }
             }
