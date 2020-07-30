@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './CollectionOverviewSection.scss';
 import CollectionOverviewCard from '../../../components/CollectionOverviewCard/CollectionOverviewCard';
+import { useEffect } from 'react';
+import gsap from 'gsap';
 
 const collections = [
     {
@@ -34,9 +36,22 @@ const collections = [
         linkTo: '/shop/collections/luggages'
     },
 ]
+
+
 const CollectionOverviewSection = () =>{
+
+    const sectionRef = useRef(null);
+
+    useEffect(()=>{
+        gsap.from(sectionRef.current, {
+            
+            autoAlpha: 0,
+            delay: 1.9,
+            duration: 1.5
+        })
+    }, [])
     return(
-        <div className = 'collection-overview-section'>
+        <div ref = {sectionRef} className = 'collection-overview-section'>
             <div className = 'container'>
                 <div className = 'collection-overview-content'>
                     {

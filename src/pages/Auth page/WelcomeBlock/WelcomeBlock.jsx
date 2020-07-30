@@ -15,26 +15,30 @@ const WelcomeBlock = ({setCurrentForm, setWelcomeBlockDisplay, setFormBlockDispl
                 <div className = '.a-icon'>
                     <AIcon/>
                 </div>
-                
                 <h1>Welcome</h1>
-                <SecButton
-                    value = 'LOG IN'
-                    style = {{width: '250px'}}
-                    onClick = {()=>{
-                        setCurrentForm('login');
-                        setWelcomeBlockDisplay('false');
-                        setFormBlockDisplay('true')
-                    }}
-                />
-                <SecButton
-                    value = 'SIGN UP'
-                    style = {{width: '250px'}}
-                    onClick = {()=>{
-                        setCurrentForm('signin');
-                        setWelcomeBlockDisplay('false');
-                        setFormBlockDisplay('true')
-                    }}
-                />
+                {
+                    <>
+                        <SecButton
+                            value = 'SIGN UP'
+                            style = {{width: '250px'}}
+                            onClick = {()=>{
+                                setCurrentForm('signin');
+                                setWelcomeBlockDisplay('false');
+                                setFormBlockDisplay('true')
+                            }}
+                        />
+                        <SecButton
+                            value = 'LOG IN'
+                            style = {{width: '250px'}}
+                            onClick = {()=>{
+                                setCurrentForm('login');
+                                setWelcomeBlockDisplay('false');
+                                setFormBlockDisplay('true')
+                            }}
+                        />
+                    </>
+                }
+                
             </div>
         </div>
     )

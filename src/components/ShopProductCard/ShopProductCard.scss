@@ -10,11 +10,23 @@
         justify-content: center;
         display: flex;
 
-        img{
-            max-height: 100%;
-            width: 100%;
-            max-width: 100%;;
-        }  
+        .image-inner{
+            height: 100%;
+            width: 100%;;
+            img{
+                max-height: 100%;
+                width: 100%;
+                max-width: 100%;
+            }              
+        }
+
+    }
+
+    .trans-background{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
     }
 
     .card-details{
