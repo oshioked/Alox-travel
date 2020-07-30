@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Navbar.scss';
 
 import CartIcon from '../CartIcon/CartIcon';
@@ -8,9 +8,19 @@ import {Link} from 'react-router-dom'
 import {useDispatch} from 'react-redux';
 import {ToggleSideMenuDisplay} from '../../Redux/SideMenu/sideMenu.actions.js';
 import {useLocation} from 'react-router-dom';
+import gsap from 'gsap';
 
 
 const Navbar = () =>{
+    const navRef = useRef(null);
+
+    useEffect(()=>{
+        const tl = gsap.timeline();
+        tl.from(navRef.current, {
+            duration: 1,
+            yPercent: -100,
+        })
+    }, [])
     
     const {pathname} = useLocation();
     const [navbarTransparent, setNavbarTransparent] = useState(true);
@@ -38,6 +48,7 @@ const Navbar = () =>{
 
     return(
         <nav 
+            ref = {navRef}
             className = 'main-nav-bar shade1bg' 
             transparent = {navbarTransparent ? 'true' : 'false'}
             pagePathName = {pagePathName}

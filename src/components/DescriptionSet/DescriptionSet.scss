@@ -3,26 +3,41 @@
     display: flex;
     flex-direction: column;
 
-    .description-set-title{
-        font-size: 32x;
-        font-family:  Helvetica, Arial, sans-serif;
-        font-weight: bold;
-        line-height: 34px;
-        margin: 0;
+    .title-container{
+        overflow: hidden;
+
+        .description-set-title{
+            font-size: 32x;
+            font-family:  Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            line-height: 34px;
+            margin: 0;
+        }        
     }
 
-    .description-set-detail{
-        font-size: 18px;
-        margin-top: 10px;
-        width: 100%;
+
+    .detail-container{
+        overflow: hidden;
         margin-bottom: 30px;
+        margin-top: 15px;
+
+        .description-set-detail{
+            font-size: 16px;
+            margin: 0;
+            width: 100%;
+        }        
     }
 
-    button{
-        
-        width: fit-content;
-        min-width: 150px;
+
+    .btn-container{
+        overflow: hidden;
+
+        button{
+            width: fit-content;
+            min-width: 150px;
+        }        
     }
+
     
 }
 

@@ -1,10 +1,10 @@
 .smaller-products-section{
-    padding: 8%;
+    padding: 60px 8%;
 
     .section-container{
 
         .product{
-            margin-bottom: 50px;
+            margin-bottom: 80px;
 
             .container{
 
@@ -19,15 +19,24 @@
                         display: none;
                     }
 
-                    img{
+                    .image-container{
                         width: 100%;
-                        height: auto;
+                        overflow: hidden;
+
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }                        
                     }
+
 
                     .description-set-title{
                         order: -1;
                     }
 
+                    .btn-container{
+                        width: 100%
+                    }
                     button{
                         margin-top: 20px;
                         width: 100%;
@@ -44,11 +53,14 @@
 
 @media only screen and (min-width: 768px){
     .smaller-products-section{
+        padding: 8%;
 
         .section-container{
 
             .product{
-                margin-bottom: 100px;
+                margin-bottom: 200px;
+                margin-top: 80px;
+
 
                 .container{
                     padding-top: 35%;
@@ -69,10 +81,20 @@
                             display: flex;
                         }
 
-                        img{
+                        .image-container{
                             width: 50%;
-                            height: stretch;
+                            overflow: hidden;
+                            
+                            img{
+                                width: 100%;
+                                // height: strtch;
+                            }                            
                         }
+
+                        .btn-container{
+                            width: unset;
+                        }
+
 
                         .description-set{
                             width: 40%;
@@ -91,6 +113,10 @@
                                 font-size: 16px;
                                 margin-bottom: 15px;
                             }
+
+
+                    
+                    
 
                             button{
                                 width: fit-content;

@@ -1,13 +1,31 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import './AuthPage.scss';
 
-
+import gsap from 'gsap';
 import WelcomeBlock from './WelcomeBlock/WelcomeBlock';
 import LoginForm from './LoginForm/LoginForm';
 import SignupForm from './SignupForm/SignupForm';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
 
 const AuthPage = ()=>{
+    const containerRef = useRef(null);
+
+    useEffect(()=>{
+        const welcomeBlock = containerRef.current.children[0];
+        const formBlock = containerRef.current.children[1];
+
+        const tl = gsap.timeline();
+    
+
+        tl
+            .from(welcomeBlock, 
+            {
+                // position: 'absolute',
+                width: '100%',
+                zIndex: 333,
+                duration: 1
+            })
+    })
 
 
     const [currentForm, setCurrentForm] = useState(window.localStorage.getItem('SignInLoginInCurrentForm'));
@@ -37,7 +55,7 @@ const AuthPage = ()=>{
     return(
         <div className = 'signup-and-login-page'>
             <div className = 'image-darkener'/>
-            <div className = 'container'>
+            <div ref = {containerRef}  className = 'container'>
                 <div className = 'welcome-block-container shade1bg' display = {WelcomeBlockDisplay}>
                     <WelcomeBlock 
                         setCurrentForm = {setCurrentFormWithAnime}

@@ -2,6 +2,7 @@ import React from 'react';
 import './CheckoutPage.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearItem, AddItemToCart, reduceItemQty } from '../../Redux/Cart/cart.actions';
+import StripeCheckoutBtn from '../../components/StripeButton/StripeButton';
 
 const ItemRow = ({imageUrl, title, quantity, price, id}) =>{
 
@@ -36,8 +37,9 @@ const ItemRow = ({imageUrl, title, quantity, price, id}) =>{
 }
 
 const CheckoutPage = () =>{
-    const cartItems = useSelector(state => state.Cart.cartItems);
-    console.log(cartItems)
+    const cart = useSelector(state => state.Cart);
+    const {cartItems} = cart;
+    console.log(cart)
     return(
         <div className = 'checkout-page'>
             <div class="title-heading">
@@ -58,6 +60,7 @@ const CheckoutPage = () =>{
                     />
                 ))
             }
+            <StripeCheckoutBtn/>
         </div>
     )
 }

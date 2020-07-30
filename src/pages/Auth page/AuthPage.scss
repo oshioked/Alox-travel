@@ -4,6 +4,11 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    transition: none;
+
+    *{
+        transition: 0s
+    }
 
     .container{
         height: 100%;
@@ -161,7 +166,6 @@
                 width: 50%;
 
                 .welcome-block{
-
 
                     .block-content{
                         button{

@@ -18,8 +18,11 @@ import './App.scss';
 import AuthPage from './pages/Auth page/AuthPage';
 import { auth, saveUserToFirestore } from './firebase/firebase';
 import { authUser, logUserOut } from './Redux/User/user.actions';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
-
+gsap.registerPlugin(ScrollTrigger)
 
 
 
@@ -45,13 +48,14 @@ const App = ()=> {
         dispatch(logUserOut());      
       }
     })
-  }, [dispatch])
+  }, [dispatch, push])
   
   return (
     <div theme = {currentTheme} className = 'App shade1bg'>
       <Navbar/>
       <SideMenu/>
       <CartMenu/>
+      {/* <LoadingScreen/> */}
       <Switch>
         <Route exact path = '/' component = {Homepage}/>
         <Route exact path = '/shop/:method/:key' component = {ShopPage}/>

@@ -1,9 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import './Welcome1.scss';
 import DescriptionSet from '../../../components/DescriptionSet/DescriptionSet';
 import { ThemeContext } from '../../../contextProviders/ThemeProvider/ThemeProvider';
+import gsap from 'gsap';
 
 const Welcome1 = () =>{
+    const imgRef = useRef(null);
+
+    useEffect(()=>{
+        gsap.from(imgRef.current, {
+        scrollTrigger: {
+            trigger: imgRef.current,
+            start: '30% bottom',
+        },
+        duration: 1,
+        opacity: 0,
+        xPercent: 80,
+
+        })
+    }, [])
 
     const {currentTheme} = useContext(ThemeContext);
 
@@ -21,7 +36,7 @@ const Welcome1 = () =>{
                                     btnLinkTo = '/shop/collections/bagpacks'
                                 />
                             </div>
-                            <img alt = 'product-bag' src = {require('./welcome1Product.png')}/> 
+                            <img ref = {imgRef} alt = 'product-bag' src = {require('./welcome1Product.png')}/> 
                         </div>
                     </div>
                 </div>

@@ -1,15 +1,34 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import './SmallerProductsSection.scss';
+import gsap from 'gsap';
 import DescriptionSet from '../../../components/DescriptionSet/DescriptionSet';
 
 const SmallerProductsSection = () =>{
+    const img1ContRef = useRef(null);
+    const img2ContRef = useRef(null);
+
+    useEffect(()=>{
+        [img1ContRef, img2ContRef].forEach((a)=>{
+            gsap.from(a.current.children, {
+                scrollTrigger:{
+                    trigger: a.current,
+                    start: '30% bottom',
+                    toggleActions:'restart none none none'
+                },
+                duration: 1.4,
+                scale: 1.5
+            })
+        })
+    })
     return(
         <div className = 'smaller-products-section'>
             <div className = 'section-container container'>
                 <div className = 'product product1'>
                     <div className = 'container'>
                             <div className = 'product-content'>
-                                <img alt = 'productImg' src = {require('./images/prod1.png')}/>
+                                <div ref = {img1ContRef} className = 'image-container'>
+                                    <img alt = 'productImg' src = {require('./images/prod1.png')}/>
+                                </div>
                                 <DescriptionSet 
                                     title = 'The Travel Legend'
                                     detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
@@ -24,15 +43,15 @@ const SmallerProductsSection = () =>{
                                         btnLinkTo = '/product/travel legend'
                                     />
                                 </div>
-                                
-                                
                             </div>
                     </div>
                 </div>
                 <div className = 'product product2'>
                     <div className = 'container'>
                             <div className = 'product-content .description-set'>
-                                <img alt = 'productImg' src = {require('./images/prod2.png')}/>    
+                                <div ref = {img2ContRef} className = "image-container">
+                                    <img alt = 'productImg' src = {require('./images/prod2.png')}/> 
+                                </div>
                                 <DescriptionSet
                                     title = 'Crossbag Season'
                                     detail = 'A few new crossbags for  ikeeping documents, accessories and other stuffs have been added to the collection. We’re sure you’d love them.'

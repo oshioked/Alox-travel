@@ -26,6 +26,7 @@
 
                 .contain{
                     height: 100%;
+                    overflow: hidden;
 
                     .description-set{
                         height: 100%;
@@ -37,10 +38,16 @@
                             padding: 0 15px;
                         }
                     
-                        button{
+                        .btn-container{
                             margin-top: auto;
-                            margin-bottom: 20px;
+                            margin-bottom: 50px;
+                            button{
+                                width: 100%;
+                                
+                                
+                            }                            
                         }
+
                     }
         
                     img{
@@ -107,6 +114,14 @@
                             .description-set-title{
                                 width: 75%;
                             }
+
+                            .btn-container{
+
+                                button{
+                                    width: unset;
+                                }
+                            }
+                            
                         }
     
                         img{

@@ -110,7 +110,7 @@ class SignupForm extends React.Component{
             try {
                 
                 const user = await auth.createUserWithEmailAndPassword(this.state.email, this.state.password);
-                const userRef = saveUserToFirestore(user, {displayName: this.state.name});
+                await saveUserToFirestore(user, {displayName: this.state.name});
 
             } catch (error) {
                 this.setState({signupError: error.message}, () =>{
