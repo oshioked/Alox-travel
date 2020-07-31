@@ -29,10 +29,10 @@ const ShopProductCard = ({product}) =>{
                 zIndex: 10,
             })
             .to(imgRef.current, {
-                x: -imgBoundingBox.x,
+                x: window.innerWidth < 768 ? -imgBoundingBox.x : -(imgBoundingBox.x - (window.innerWidth * .08))  ,
                 y: -(imgBoundingBox.y - navBarBoundingBox.height),
                 // height: (window.innerHeight - navBarBoundingBox.height),
-                width: window.innerWidth,
+                width: window.innerWidth < 768 ? window.innerWidth : (window.innerWidth * .84 * .5) ,
                 maxWidth: (window.innerHeight * 0.5),
                 duration: 1
             })

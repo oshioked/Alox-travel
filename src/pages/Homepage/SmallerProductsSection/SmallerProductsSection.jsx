@@ -12,11 +12,10 @@ const SmallerProductsSection = () =>{
             gsap.from(a.current.children, {
                 scrollTrigger:{
                     trigger: a.current,
-                    start: '30% bottom',
-                    toggleActions:'restart none none none'
+                    start: '20% bottom',
                 },
                 duration: 1.4,
-                scale: 1.5
+                scale: 1.2
             })
         })
     })
