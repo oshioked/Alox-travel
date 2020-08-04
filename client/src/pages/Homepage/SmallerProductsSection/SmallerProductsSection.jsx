@@ -26,7 +26,7 @@ const SmallerProductsSection = () =>{
                     <div className = 'container'>
                             <div className = 'product-content'>
                                 <div ref = {img1ContRef} className = 'image-container'>
-                                    <img alt = 'productImg' src = {require('./images/prod1.png')}/>
+                                    <img alt = 'productImg' src = {require('../../../assests/images/prod1.png')}/>
                                 </div>
                                 <DescriptionSet 
                                     title = 'The Travel Legend'
@@ -49,7 +49,7 @@ const SmallerProductsSection = () =>{
                     <div className = 'container'>
                             <div className = 'product-content .description-set'>
                                 <div ref = {img2ContRef} className = "image-container">
-                                    <img alt = 'productImg' src = {require('./images/prod2.png')}/> 
+                                    <img alt = 'productImg' src = {require('../../../assests/images/prod2.png')}/> 
                                 </div>
                                 <DescriptionSet
                                     title = 'Crossbag Season'

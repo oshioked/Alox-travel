@@ -6,22 +6,22 @@ import gsap from 'gsap';
 
 const collections = [
     {
-        imageSrc: require('./images/AloxImg4 1.png'), 
+        imageSrc: require('../../../utilities/Database/images/luggCat.jpeg'), 
         title: 'Luggages',
         linkTo: '/shop/collections/luggages'
     },
     {
-        imageSrc: require('./images/AloxImg4 1.png'), 
-        title: 'Luggages',
+        imageSrc: require('../../../utilities/Database/images/backpackCat.jpeg'), 
+        title: 'Backpacks',
         linkTo: '/shop/collections/luggages'
     },
     {
-        imageSrc: require('./images/AloxImg4 1.png'), 
-        title: 'Luggages',
+        imageSrc: require('../../../assests/images/prod2.png'), 
+        title: 'Crossbody bags',
         linkTo: '/shop/collections/luggages'
     },
     {
-        imageSrc: require('./images/AloxImg4 1.png'), 
+        imageSrc: require('../../../utilities/Database/images/brown leather bag.png'), 
         title: 'Luggages',
         linkTo: '/shop/collections/luggages'
     },
