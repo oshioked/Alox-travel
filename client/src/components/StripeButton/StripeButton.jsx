@@ -1,11 +1,19 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 
 const StripeCheckoutBtn = props =>{
     const {price} = props;
     const stripeKey = 'pk_test_QOhWjhjQaBSOYl33QeYr8dn300s8WTvdFa';
     const onToken = (token) =>{
-
+        axios({
+            url: '/payment',
+            method: 'post',
+            data: {
+                amount: price,
+                token
+            }
+        })
     }
 
     return(
