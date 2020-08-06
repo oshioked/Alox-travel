@@ -7,13 +7,13 @@ import MainProductSection from './MainProductSection/MainProductSection';
 
 
 const ProductDetailsPage = ({match}) =>{
-    const product = products.find((product, i) =>(
+    const theProduct = products.filter((product, i) =>(
         product.name === match.params.id
-    ))
+    ))[0]
 
     return(
         <div className = 'product-details-page'>
-            <MainProductSection product = {product}/>
+            <MainProductSection product = {theProduct}/>
         </div>
     )
 }

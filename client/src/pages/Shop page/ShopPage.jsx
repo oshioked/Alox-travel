@@ -1,46 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ShopPage.scss';
 import ShopInfoBar from './ShopInfoBar/ShopInfoBar';
 import ShopSideSection from './ShopSideSection/ShopSideSection';
 import ShopMainSection from './ShopMainSection/ShopMainSection';
-import {connect} from 'react-redux';
-import {fetchProductsByCollection, fetchProductsBySearch} from '../../Redux/Shop/shop.actions'
+import products from '../../utilities/Database/products';
+import {useLocation} from 'react-router-dom';
+import { useCallback } from 'react';
 
 
-const ShopPage = ({match, fetchProductsByCollection, fetchProductsBySearch, products, isFetching}) =>{
+const ShopPage = () =>{
+    const [catProducts, setCatProducts] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(true)
+    const {pathname} = useLocation();
+    const pathStringArr = pathname.split('/');
+    const categoryName = pathname.split('/')[pathStringArr.length -1];
 
+    const fetchProduct = useCallback(() =>{
+        setIsLoading(true);
+        const categoryProducts = products.filter(prod => prod.category.includes(categoryName.toLowerCase()));
+        setCatProducts(categoryProducts);
+        setIsLoading(false)
+    }, [categoryName] )
+    
     useEffect(()=>{
-        const {method, key} = match.params;
-        if(method === 'collections'){
-            fetchProductsByCollection(key)
-        }else if(method === 'search'){
-            fetchProductsBySearch(key)
-        }
-    }, [match, fetchProductsByCollection, fetchProductsBySearch])
+        fetchProduct();
+    }, [fetchProduct])
+    console.log(catProducts)
 
     return(
         <div className = 'shop-page'>
             <div className = 'shop-page-container'>
                 <ShopInfoBar/>
                 <div className = 'body-container container'>
-                    <ShopSideSection/>
-                    <ShopMainSection/>
+                    <ShopSideSection activeCategory = {categoryName}/>
+                    <ShopMainSection isLoading = {isLoading} category = {categoryName} products = {catProducts}/>
                 </div>
             </div>
-            
         </div>
     )
 }
 
-const mapStateToProps = (state) =>({
-    isFetching: state.Shop.isFetching,
-    products: state.Shop.shopProducts
-})
-
-const mapDispatchToProps = (dispatch) =>({
-    fetchProductsByCollection: (CollectionKey) => dispatch(fetchProductsByCollection(CollectionKey)),
-    fetchProductsBySearch: (SearchKey) => dispatch(fetchProductsBySearch(SearchKey))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
+export default ShopPage;

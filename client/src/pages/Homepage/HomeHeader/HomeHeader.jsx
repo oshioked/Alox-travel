@@ -33,7 +33,6 @@ const HomeHeader = () =>{
                         <div style = {{overflow: 'hidden'}}>
                             <SecButton style = {{border: '2px solid white'}} linkTo = '/collection' value = 'SHOP NOW'/>
                         </div>
-                        
                     </div>
                 </div>
             </div> 

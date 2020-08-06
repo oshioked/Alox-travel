@@ -18,7 +18,7 @@ const SmallerProductsSection = () =>{
                 scale: 1.2
             })
         })
-    })
+    }, [])
     return(
         <div className = 'smaller-products-section'>
             <div className = 'section-container container'>
@@ -32,14 +32,14 @@ const SmallerProductsSection = () =>{
                                     title = 'The Travel Legend'
                                     detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
                                     btnValue = 'ORDER NOW'   
-                                    btnLinkTo = '/product/travel legend'                     
+                                    btnLinkTo = '/product/Travel brown leather luggage.'                     
                                 />
                                 <div className = 'description-set pc'>
                                     <DescriptionSet
                                         title = 'The Travel Legend'
                                         detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
                                         btnValue = 'ORDER NOW'
-                                        btnLinkTo = '/product/travel legend'
+                                        btnLinkTo = '/product/Travel brown leather luggage.'
                                     />
                                 </div>
                             </div>
@@ -55,14 +55,14 @@ const SmallerProductsSection = () =>{
                                     title = 'Crossbag Season'
                                     detail = 'A few new crossbags for  ikeeping documents, accessories and other stuffs have been added to the collection. We’re sure you’d love them.'
                                     btnValue = 'SHOP NOW'
-                                    btnLinkTo = '/shop/collections/crossbags'
+                                    btnLinkTo = '/shop/collections/Crossbody bags'
                                 />
                                 <div className = ' pc description-set'>
                                     <DescriptionSet
                                         title = 'Crossbag Season'
                                         detail = 'A few new crossbags for  ikeeping documents, accessories and other stuffs have been added to the collection. We’re sure you’d love them.'
                                         btnValue = 'SHOP NOW'
-                                        btnLinkTo = '/shop/collections/crossbags'
+                                        btnLinkTo = '/shop/collections/Crossbody bags'
                                     />
                                 </div>
                                 

@@ -76,7 +76,6 @@ const ShopProductCard = ({product}) =>{
                 </div>
                 <div ref = {detailsRef} className = 'card-details'>
                         <p className = 'product-name'>{product.name}</p>
-                        <p className = 'product-category'>{product.category}</p>
                         <p className = 'product-price'>{product.price}</p>
                 </div>  
             </div>

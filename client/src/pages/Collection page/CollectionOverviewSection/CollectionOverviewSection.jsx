@@ -8,40 +8,27 @@ const collections = [
     {
         imageSrc: require('../../../utilities/Database/images/luggCat.jpeg'), 
         title: 'Luggages',
-        linkTo: '/shop/collections/luggages'
     },
     {
         imageSrc: require('../../../utilities/Database/images/backpackCat.jpeg'), 
         title: 'Backpacks',
-        linkTo: '/shop/collections/luggages'
     },
     {
-        imageSrc: require('../../../assests/images/prod2.png'), 
+        imageSrc: require('../../../assests/images/newInCat.png'), 
+        title: 'New In',
+    },
+    {
+        imageSrc: require('../../../assests/images/womenCat.jpeg'), 
         title: 'Crossbody bags',
-        linkTo: '/shop/collections/luggages'
     },
     {
-        imageSrc: require('../../../utilities/Database/images/brown leather bag.png'), 
-        title: 'Luggages',
-        linkTo: '/shop/collections/luggages'
-    },
-    {
-        imageSrc: require('./images/AloxImg4 1.png'), 
-        title: 'Luggages',
-        linkTo: '/shop/collections/luggages'
-    },
-    {
-        imageSrc: require('./images/AloxImg4 1.png'), 
-        title: 'Luggages',
-        linkTo: '/shop/collections/luggages'
+        imageSrc: require('../../../assests/images/photo-1452421822248-d4c2b47f0c81.jpeg'), 
+        title: 'Accessories',
     },
 ]
 
-
 const CollectionOverviewSection = () =>{
-
     const sectionRef = useRef(null);
-
     useEffect(()=>{
         gsap.from(sectionRef.current, {
             
@@ -60,7 +47,7 @@ const CollectionOverviewSection = () =>{
                                 key = {i}
                                 imgSrc = {collection.imageSrc}
                                 collectionName = {collection.title}
-                                btnLinkTo = {collection.linkTo}
+                                btnLinkTo = {`/shop/collections/${collection.title}`}
                             />
                         ))
                     }

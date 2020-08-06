@@ -22,11 +22,21 @@
                 text-decoration: dotted;
 
                 li{
-                    padding: 10px;
-                    padding-left: 20%;
                     font-size: 15px;
                     width: 100%;
                     cursor: pointer;
+
+                    &[active = 'true']{
+                        background-color: rgba(0, 0, 0, 0.236);
+                    }
+                    
+                    a{
+                        padding: 10px;
+                        padding-left: 20%;
+                        height: 100%;
+                        width: 100%;
+                        display: block;
+                    }
 
                     &:hover{
                         background-color: rgba(0, 0, 0, 0.136);

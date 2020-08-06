@@ -30,9 +30,9 @@ const CollectionOverviewCard = ({imgSrc, btnLinkTo, collectionName}) =>{
     }, [])
     return(
         <div ref = {cardRef} className = 'collection-overview-card'>
-            <div className = 'image-darkener'/>
+            <div className = 'image-darkener' style = {{zIndex: 1, opacity: 1}}/>
             <img src = {imgSrc} alt = 'collection-card'/>
-            <div className = 'collection-detail-block'>
+            <div className = 'collection-detail-block' style = {{zIndex: 2}}>
                 <div className = 'detail-block-container'>
                     <h1>{collectionName}</h1>
                     <SecButton

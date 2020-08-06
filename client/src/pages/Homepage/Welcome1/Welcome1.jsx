@@ -33,7 +33,7 @@ const Welcome1 = () =>{
                                     title = 'The New Simple Fire Backpack'
                                     detail = 'An extraordinary backpack is on its way. There’s no need to carry a full luggage when you’re travelling for only a few days.'
                                     btnValue = 'SHOP NOW'
-                                    btnLinkTo = '/shop/collections/bagpacks'
+                                    btnLinkTo = '/shop/collections/Backpacks'
                                 />
                             </div>
                             <img ref = {imgRef} alt = 'product-bag' src = {require('./welcome1Product.png')}/> 

@@ -42,9 +42,7 @@ const MainProductSection = ({product, addItemToCart}) =>{
                 <div ref = {detailsRef} className = 'product-detail-section'>
                     <div className = 'block1'>
                         <h3>{product.name}</h3>
-                        <p>{product.category}</p>
                         <p>{product.highPrice}</p>
-                        <p>{product.price}<span>{product.discount}</span></p>
                     </div>
                     <div className = 'block2'>
                         <p>{product.description}</p>

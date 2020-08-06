@@ -16,7 +16,7 @@ const Welcome2 = () =>{
         })
     }, [])
 
-    const productId = 'selfadjustwatch';
+    const prodName = 'The Self Adjusting Watch';
 
     return(
         <div className = 'welcome2'>
@@ -27,7 +27,7 @@ const Welcome2 = () =>{
                     <div className = 'description-set'>
                         <DescriptionSet
                             title = 'The Self-adjusting Watch.'
-                            btnLinkTo = {`/product/${productId}`}
+                            btnLinkTo = {`/product/${prodName}`}
                             detail = 'Where ever you travel to, whatever time zone, using our upgraded GPS system, this watch automatically change time zone.'
                             btnValue = 'PREORDER NOW'
                         />                    
