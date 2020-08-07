@@ -48,20 +48,6 @@ const App = ()=> {
       }
     })
   }, [dispatch, push])
-
-  useEffect(()=>{
-    document.onreadystatechange = function() { 
-      if (document.readyState !== "complete") { 
-        console.log(document.readyState)
-          // document.querySelector("body").style.visibility = "hidden"; 
-          // document.querySelector("#loader").style.visibility = "visible"; 
-      } else { 
-        console.log(document.readyState)
-          // document.querySelector("#loader").style.display = "none"; 
-          // document.querySelector("body").style.visibility = "visible"; 
-      } 
-  };
-  }, [])
   
   return (
     <div theme = {currentTheme} className = 'App shade1bg'>

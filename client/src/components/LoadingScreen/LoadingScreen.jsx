@@ -3,8 +3,11 @@ import './LoadingScreen.scss';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
 
-const LoadingScreen = () =>{
+const LoadingScreen = ({display}) =>{
     const {currentTheme} = useContext(ThemeContext);
+    if(!display){
+        return null
+    }
 
     return(
         <div theme = {currentTheme} className = "loading-screen">
