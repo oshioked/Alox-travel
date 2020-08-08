@@ -51,7 +51,7 @@ const Navbar = () =>{
             ref = {navRef}
             className = 'main-nav-bar shade1bg' 
             transparent = {navbarTransparent ? 'true' : 'false'}
-            pagePathName = {pagePathName}
+            pagepathname = {pagePathName}
         >
             <button id = 'navbar-toggler-btn' onClick = {toggleSideMenuDisplay}>
                 <NavTogglerIcon/>

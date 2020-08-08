@@ -25,15 +25,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 
 
-
-
-const App = ()=> {
+function App (){
   const {currentTheme} = useContext(ThemeContext);
   const dispatch = useDispatch();
   const user = useSelector(state => state.User);
   const isUserSignedIn = Boolean(user);
   const {push} = useHistory();
-
+ 
+  
   useEffect(() => {
     auth.onAuthStateChanged(async (userAuth) =>{
       if(userAuth){
@@ -48,26 +47,26 @@ const App = ()=> {
       }
     })
   }, [dispatch, push])
-  
+
   return (
     <div theme = {currentTheme} className = 'App shade1bg'>
       <Navbar/>
       <SideMenu/>
       <CartMenu/>
-      {/* <LoadingScreen/> */}
-      <Switch>
-        <Route exact path = '/' component = {Homepage}/>
-        <Route exact path = '/shop/:method/:key' component = {ShopPage}/>
-        <Route exact path = '/collection' component = {Collectionpage}/>
-        <Route exact path = '/login' render = {()=> 
-          isUserSignedIn
-          ? (<Redirect to = '/'/>)
-          : (<AuthPage/>)
-        }
-        />
-        <Route exact path = '/product/:id' component = {ProductDetailsPage}/>
-        <Route exact path = '/checkout' component = {CheckoutPage}/>
-      </Switch>
+      <LoadingScreen/>
+        <Switch>
+          <Route exact path = '/' component = {Homepage}/>
+          <Route exact path = '/shop/:method/:key' component = {ShopPage}/>
+          <Route exact path = '/collection' component = {Collectionpage}/>
+          <Route exact path = '/login' render = {()=> 
+            isUserSignedIn
+            ? (<Redirect to = '/'/>)
+            : (<AuthPage/>)
+          }
+          />
+          <Route exact path = '/product/:id' component = {ProductDetailsPage}/>
+          <Route exact path = '/checkout' component = {CheckoutPage}/>
+        </Switch>
     </div>
   )
 }

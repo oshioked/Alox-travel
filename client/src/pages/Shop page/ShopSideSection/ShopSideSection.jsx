@@ -30,7 +30,7 @@ const ShopSideSection = ({activeCategory}) =>{
                     <ul>
                         {
                             categories.map(category => (
-                                <li active = {activeCategory === category.title? 'true' : 'false'}><Link to = {`/shop/collections/${category.title}`}>{category.title}</Link></li>
+                                <li key = {category.title} active = {activeCategory === category.title? 'true' : 'false'}><Link to = {`/shop/collections/${category.title}`}>{category.title}</Link></li>
                             ))
                         }
                     </ul>

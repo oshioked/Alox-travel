@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100vw;
     background: white;
-    z-index: 1000000;
+    z-index: 100000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,9 @@
     }
 
     .alox-icon{
-        width: 170px;
+        width: 100px;
+        height: fit-content;
+        overflow: hidden;;
         
         svg{
             width: 100%;

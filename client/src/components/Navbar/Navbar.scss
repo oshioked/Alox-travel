@@ -8,14 +8,14 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: -9px 0px 5px #00000036;
-    z-index: 3;
+    z-index: 1003;
 
     &[transparent = 'true']{
         background: transparent !important;
         box-shadow: none;
 
-        &[pagePathName = '/'],
-        &[pagePathName = '/login']{
+        &[pagepathname = '/'],
+        &[pagepathname = '/login']{
             *{
                 fill: white !important;
             }

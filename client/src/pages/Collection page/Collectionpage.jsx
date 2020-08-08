@@ -3,6 +3,7 @@ import './Collectionpage.scss';
 
 import RecommendedSection from './RecommendedSection/RecommendedSection';
 import CollectionOverviewSection from './CollectionOverviewSection/CollectionOverviewSection';
+import withLoading from '../../components/withLoading/withLoading';
 
 const Collectionpage = () =>{
     return(
@@ -13,4 +14,4 @@ const Collectionpage = () =>{
     )
 }
 
-export default Collectionpage;
+export default withLoading(Collectionpage);

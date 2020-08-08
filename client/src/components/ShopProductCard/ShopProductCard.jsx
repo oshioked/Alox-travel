@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import './ShopProductCard.scss';
-import {Link, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import gsap from 'gsap';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
@@ -65,7 +65,7 @@ const ShopProductCard = ({product}) =>{
     }, [])
     return(
         <div>
-        <Link onClick = {onClick} >
+        <div onClick = {onClick} >
             <div className = 'shop-product-card'>
                 
                 <div className = 'image-container'>
@@ -79,7 +79,7 @@ const ShopProductCard = ({product}) =>{
                         <p className = 'product-price'>{product.price}</p>
                 </div>  
             </div>
-        </Link>
+        </div>
         </div>
         
     )

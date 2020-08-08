@@ -4,7 +4,6 @@ import './ShopMainSection.scss';
 import ShopProductCard from '../../../components/ShopProductCard/ShopProductCard';
 import {ThemeContext} from '../../../contextProviders/ThemeProvider/ThemeProvider';
 import ShopSearchBox from '../../../components/ShopSearchBox/ShopSearchBox';
-import products from '../../../utilities/Database/products';
 
 
 const ShopMainSection = ({isLoading, category, products}) =>{
@@ -43,7 +42,7 @@ const ShopMainSection = ({isLoading, category, products}) =>{
                         {
                             !isLoading ?
                             products.filter(product => !product.recommended).map((product, i) =>(
-                                <ShopProductCard product ={product}/>
+                                <ShopProductCard key = {i} product ={product}/>
                             ))
                             : <h1>Loading</h1>
                         }

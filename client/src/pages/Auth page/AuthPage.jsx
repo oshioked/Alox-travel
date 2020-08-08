@@ -6,6 +6,7 @@ import WelcomeBlock from './WelcomeBlock/WelcomeBlock';
 import LoginForm from './LoginForm/LoginForm';
 import SignupForm from './SignupForm/SignupForm';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
+import withLoading from '../../components/withLoading/withLoading';
 
 const AuthPage = ()=>{
     const containerRef = useRef(null);
@@ -122,4 +123,4 @@ const AuthPage = ()=>{
     )
 }
 
-export default AuthPage;
+export default withLoading(AuthPage);

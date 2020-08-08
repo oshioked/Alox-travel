@@ -6,6 +6,7 @@ import ShopMainSection from './ShopMainSection/ShopMainSection';
 import products from '../../utilities/Database/products';
 import {useLocation} from 'react-router-dom';
 import { useCallback } from 'react';
+import withLoading from '../../components/withLoading/withLoading';
 
 
 const ShopPage = () =>{
@@ -41,4 +42,4 @@ const ShopPage = () =>{
     )
 }
 
-export default ShopPage;
+export default withLoading(ShopPage);

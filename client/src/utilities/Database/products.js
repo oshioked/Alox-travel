@@ -9,7 +9,6 @@ const description = `
 
 
 const products = [
-    // BACKPACKS
     {
         id: 'p17',
         name: "Men's Travel Flight Bag Handbag Crazy Horse Leather Vintage Luggage Bag",
@@ -37,7 +36,7 @@ const products = [
         id: 'p1',
         name: 'Dive backpack with brown straps and buckles.',
         imgSrc: 'https://ae01.alicdn.com/kf/H7380c4a3a32040198fd985b0fdb50f94p/Large-Capacity-Men-s-Backpack-Travel-Bag-Men-Casual-Computer-Bags-Male-Full-Leather-College-Backpacks.jpg',
-        category: ['backpacks', ],
+        category: ['backpacks' ],
         discount: '-25%',
         highPrice: '$ 53.25',
         description: description,
@@ -124,7 +123,7 @@ const products = [
         id: 'p9',
         name: 'Backpack set',
         imgSrc: require('./images/backpack set.png'),
-        category: [['accessories', 'new in']],
+        category: ['accessories', 'new in'],
         discount: '25%',
         highPrice: '$ 140',
         description: description,
@@ -290,7 +289,7 @@ const products = [
         recommended: false,
         price: '$ 85',
         quantityAvailable: '110'
-    },,
+    },
     {
         id: 'p17',
         name: " Spiral Coil Sketchbook Kraft Paper Journal",
@@ -307,7 +306,7 @@ const products = [
         id: 'p17',
         name: "Real Leather men Casual Design Small Waist Bag ",
         imgSrc: 'https://ae01.alicdn.com/kf/H4f2323c8281a434a8380d55ff9af03a6o/Real-Leather-men-Casual-Design-Small-Waist-Bag-Cowhide-Fashion-Hook-Bum-Bag-Waist-Belt-Pack.jpg',
-        category: [, 'new in', 'crossbody bags', 'accessories'],
+        category: ['new in', 'crossbody bags', 'accessories'],
         discount: '25%',
         highPrice: '$ 140',
         description: description,
