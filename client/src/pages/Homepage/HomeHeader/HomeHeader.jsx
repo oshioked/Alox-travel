@@ -3,11 +3,20 @@ import './HomeHeader.scss';
 import SecButton from '../../../components/SecButton/SecButton';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import { useState } from 'react';
 
 
 const HomeHeader = () =>{
     const headerBgRef = useRef(null);
     const descRef = useRef(null)
+    const [imgReady, setImgReady] = useState(false)
+    let img = new Image();
+    useEffect(()=>{
+        // img.src = require('./Images/headerBg.png');
+        img.onload = () =>{
+            console.log('image loaded')
+        }
+    })
 
     useEffect(() => {
         const h1Ref = descRef.current.children[0].children[0];
@@ -20,9 +29,13 @@ const HomeHeader = () =>{
             .from(btnRef, {duration: .2, opacity: 0, y: 45, ease: 'power3.easeOut'}, '-=.5')
     }, [])
 
+
     return(
-        <div className = 'home-header' style = {{background: require('./Images/headerBg.png').ro}}>
-            <div ref = {headerBgRef} className = "bg-image-container"/>
+        <div className = 'home-header'>
+
+            <div ref = {headerBgRef} className = "bg-image-container">
+                <img src = {require('./Images/headerBg.jpg')} alt = "header bg"/>
+            </div>
             <div className = 'image-darkener'/>
             <div className = 'container'>
                 <div className = 'home-header-content'>

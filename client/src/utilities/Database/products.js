@@ -24,7 +24,7 @@ const products = [
     {
         id: 'p10',
         name: 'New Fire Backpack',
-        imgSrc: 'https://lh3.googleusercontent.com/Z0KQbaDVR6Ca4uxHvQJwxaI7I5UkhyFaIERTp8CURmOtoTl3ZM33W0-VS3aaGWJty907Ynaiumgn-PI5-KKqb9nADm2M-lHcx7QStxfwsrng8f2H5WBKybXHLJnUSQ_kCLcP8mpSTh5OfG2v9Uz4tMGfA1kuumwZEVjR5ZozVlvRrYrP4aVZbDiH0EZLIo9swUwIg8XL3j8f0tRQJIS9--TqvPv2dGo-EsDpBWaLsOYF7X1LQC_arK0q4R5MLSnfu180612WHX4kF0NP6QoJkT7REhYwG3bWSVQgnBWqnyVl8RshMh5oTvud24K32fCfPbL8zv2Lw1XQ_i-TRPTGCs_1FaxWKXC9F6ysI6VB1jW9lo8RbXyB0685fU-5iy-UGOrtwwg9LWGDb_omhrB1QBR-14Wztgvym2WaUb9ejG3R9sgPNKWu3D6_vkV-EqB98Lrl3NnEbiAIIDMHR2_EQ_mpTxy4dgOgCU1Do8bMQXB_K9d7wqeatA-LQsc2bbjUQxx23vm-vHxktWIS_f_oref_gKi2uhabPDRCVI2UIS40F4dk5YviArlD9V7pAdi9bGrJCNTIO8zQFrYVHLODOZ015q4peqDqCMKiFMHS5oz6-PMWnQY2qTHxfGfzm0xEUdT5sp2gnoXnP3Qj1lmJGff3dCjwH_VAQDlKCqroqtCRiDPIwwCDweH7Uu7A=s800-no?authuser=0',
+        imgSrc: require('../../assests/images/firebackpack (1).png'),
         category: ['backpacks', 'new in'],
         discount: '25%',
         highPrice: '$ 140',
@@ -157,8 +157,8 @@ const products = [
     } ,
     {
         id: 'p17',
-        name: "Travel brown leather luggage.",
-        imgSrc: 'https://lh3.googleusercontent.com/BgTMSMPWR7Gyb1z1TAf5HnnaL6tseYfw3PTFG2Gm30Wmes4B7p3Rzik_oUUYDv763a8ebEK-kZCURPBF7k0NF1nxuiVYcAoXZs74txhpsumfHm3bQwPJCCLDEnL_dAe3n4aVetETkMQcJYBANxucRLDYZpDGRDbrjBRU4--vPr7Vk0U_M9kO3tA5ue8g-JhxJ4lDIpMC82t778jSvv_HSktR2HFa53TPUR2s5-C-_B9xVpKAIeEdzSAoDk-EvrOUQEvOCyXI3dskMsHAOlnqKUFZtIvzF7GnmQdFFhLh-QbNXV6bTLruK4m_EZqN1xaCkMWsIPn_KxxLmpytaIOhA5GIhA055bTmV8M0aGzkOAMgU6ho93Y4IN3Wd1iW32_sGdQHus4GsFkhP_-WXMtfqzfL5ThAaUgtePnatEHyGB2ZMrLRwZlELQwfbxhR47tAvMpxsahcdhCQeK_eHF3t8OMvscEQLTDK2HqFe0eZRAE4cgQaHHJscMJCRtSnvMG1mt04y9u6AOiS6tc5E-liDi5mBYMpG353rZZDkqgKieeAY-ycqFRYvt7sxkOB5FKeWIp38tQg4Zryp8YTp0SbCcSHeazHWT0EOPhsjabddOSEuPOYB9oJeOJboaLKyL7QXozlGfteC9A6bPJpF8rGMOo0LV-Jv8Yver-QniKmz8L3QEdzKCaRdlKrnBuZ=s800-no?authuser=0',
+        name: "Travel brown leather luggage",
+        imgSrc: require('../../assests/images/travelLengend.png'),
         category: ['luggages', 'new in'],
         discount: '25%',
         highPrice: '$ 140',
@@ -182,7 +182,7 @@ const products = [
     {
         id: 'p12',
         name: 'The Self Adjusting Watch',
-        imgSrc: 'https://lh3.googleusercontent.com/0qnJy0GMHv8-7M4-CUVIlhNeSv3ge7o2T2dbZQB9CzW7ApJ-6ucvAB9GL7w-ouslZhw0NNrUv7Fk0WUbq6uhME2o1nAfKO38-qVv4V-5Q0yxyQz8XLtBRXyji6yirRin-M9aRWh1chUheBzzO74WFOxOX4P4yQqfm3_GFYClavekF19m-k4O4jYWTsBYfFusZe2QNwSxqOXEiT6Fl1Fzoi512GWK_jZhLFaNUdN0h4IPofahwMN7V676q9TkjbLGDlEFfAtB3_oxju_eHjOL3DMb2t40pcYAQM8clSC0NwKNaSbeRrWlaNp5y21mzg1s-P8BCtteQdC5NLp85Zxbqj-rUnunt5IlaOUgvyROcLr9gSpogXyGCfwsNsHltUegTctrAom4bAV5h_torBhRpthKI7T-DyfXQz2pwPtMvIrJ2u1Iy4iFSsXqXeDfiDVtxLtSlOu-OcDvUaC2fVxUp_sKy0etkzjkqQJ_CpQ0YVI5XGu2eOYH4YZJ-t12z_jhkpEqjqgzsxiuA5_utF9ynoMr8h6ajyfq7uA0lYv4FukgLnUl6sjVITgN4QqLU292dR4RTMkEHm31v2jkOc6CamPZXdrxvBPd0NNAtu4vii1yACAW2x5yRUUU2ZROC3REDbF5fkZ4FSsmz-V_segWEXnu6D3pkiC8bXmfsCdBNqhJvX33S2lc6VhjhbhQ=w800-h801-no?authuser=0',
+        imgSrc: require('../../assests/images/watch (1).png'),
         category: ['accessories','new in'],
         discount: '25%',
         highPrice: '$ 140',

@@ -56,13 +56,7 @@ const ShopProductCard = ({product}) =>{
         push(`/product/${product.name}`);
         window.scrollTo(0, 0)
     }
-    
 
-    useEffect(()=>{
-        
-
-
-    }, [])
     return(
         <div>
         <div onClick = {onClick} >
@@ -72,7 +66,7 @@ const ShopProductCard = ({product}) =>{
                     <div className = "image-inner">
                         <img  ref = {imgRef} src = {product.imgSrc} alt = {product.name}/>
                     </div>
-                    <div ref = {transBgRef} className  = "trans-background"/>
+                    <div style = {{position: 'fixed', top: '0', left: '0', bottom: '0'}} ref = {transBgRef} className  = "trans-background"/>
                 </div>
                 <div ref = {detailsRef} className = 'card-details'>
                         <p className = 'product-name'>{product.name}</p>

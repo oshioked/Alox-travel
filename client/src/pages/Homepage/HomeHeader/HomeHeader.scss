@@ -10,9 +10,14 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: url('./Images/headerBg.png');
-        background-position: center;
-        background-size: cover; 
+        display: flex;
+        justify-content: center;
+        align-items: center;;;
+
+        img{
+            // width: 100%;
+            min-height: 100%;;
+        }
     }
 
     *{

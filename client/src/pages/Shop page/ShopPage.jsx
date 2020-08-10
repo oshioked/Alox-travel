@@ -4,18 +4,30 @@ import ShopInfoBar from './ShopInfoBar/ShopInfoBar';
 import ShopSideSection from './ShopSideSection/ShopSideSection';
 import ShopMainSection from './ShopMainSection/ShopMainSection';
 import products from '../../utilities/Database/products';
-import {useLocation} from 'react-router-dom';
+import {useLocation, useParams} from 'react-router-dom';
 import { useCallback } from 'react';
-import withLoading from '../../components/withLoading/withLoading';
+import gsap from 'gsap';
+import { useRef } from 'react';
 
 
 const ShopPage = () =>{
     const [catProducts, setCatProducts] = useState([]);
 
-    const [isLoading, setIsLoading] = useState(true)
-    const {pathname} = useLocation();
-    const pathStringArr = pathname.split('/');
-    const categoryName = pathname.split('/')[pathStringArr.length -1];
+    const [isLoading, setIsLoading] = useState(true);
+    const pageRef = useRef(null);
+    const params = useParams();
+    console.log(params);
+    const method = params.method;
+    const key = params.key;
+    const categoryName = key;
+
+    useEffect(()=>{
+        gsap.to(pageRef.current, {
+            autoAlpha: 1,
+            duration: 1.3,
+            ease: 'power3.in'
+        })
+    }, [])
 
     const fetchProduct = useCallback(() =>{
         setIsLoading(true);
@@ -27,10 +39,9 @@ const ShopPage = () =>{
     useEffect(()=>{
         fetchProduct();
     }, [fetchProduct])
-    console.log(catProducts)
 
     return(
-        <div className = 'shop-page'>
+        <div ref = {pageRef} className = 'shop-page'>
             <div className = 'shop-page-container'>
                 <ShopInfoBar/>
                 <div className = 'body-container container'>
@@ -42,4 +53,4 @@ const ShopPage = () =>{
     )
 }
 
-export default withLoading(ShopPage);
+export default ShopPage;

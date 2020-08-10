@@ -3,7 +3,7 @@ import './DescriptionSet.scss';
 import SecButton from '../SecButton/SecButton';
 import gsap from 'gsap';
 
-const DescriptionSet = ({title, btnLinkTo, detail, btnValue}) =>{
+const DescriptionSet = ({title, btnLinkTo, onBtnClick, detail, btnValue}) =>{
     const titleRef = useRef(null);
     const pRef = useRef(null);
     const btnContainerRef = useRef(null)
@@ -30,7 +30,7 @@ const DescriptionSet = ({title, btnLinkTo, detail, btnValue}) =>{
                 <p ref = {pRef} className = 'description-set-detail'>{detail}</p>
             </div>
             <div ref = {btnContainerRef} className = "btn-container">
-                <SecButton linkTo = {btnLinkTo} value = {btnValue}/>
+                <SecButton onClick = {onBtnClick} linkTo = { btnLinkTo? btnLinkTo : null} value = {btnValue}/>
             </div>
             
         </React.Fragment>

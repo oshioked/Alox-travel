@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './LoadingScreen.scss';
 import { useContext } from 'react';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
@@ -11,43 +11,33 @@ const LoadingScreen = () =>{
     const logoRef = useRef(null);
     const {display} = useSelector(state => state.loadingReducer)
     const screenRef = useRef(null);
+    const tl = useState(gsap.timeline({paused: true}))[0]
     console.log(display);
 
 
     useEffect(()=>{
-        console.log('effect 2')
+        tl
+        .fromTo(screenRef.current, {
+            yPercent: 100,
+            duration: 1,
+            ease: 'power3.out'
+        }, {
+            yPercent: 0
+        })
+        .fromTo(logoRef.current, {
+            yPercent: 140,
+            duration: .5
+        }, {
+            yPercent: 0
+        })
+    }, [tl])
+
+    useEffect(()=>{
         if(display === 'true'){
-            console.log('from bottom to center')
-            const tl = gsap.timeline()
-            tl
-                .fromTo(screenRef.current, {
-                    yPercent: 100,
-                    duration: 1.5,
-                    ease: 'power3.out'
-                },
-                {
-                    yPercent: 0,
-                })
-                .fromTo(logoRef.current, {
-                    yPercent: 140,
-                    duration: .5
-                }, {
-                    yPercent: 0,
-                })
+            tl.play();
         }
         if(display === 'false'){
-            const tl = gsap.timeline()
-            console.log('to top')
-            tl
-                .to(logoRef.current, {
-                    yPercent: -140,
-                    duration: .5
-                })
-                .to(screenRef.current, {
-                    yPercent: -100,
-                    duration: 1,
-                    ease: 'power3.ease'
-                });
+            tl.reverse();
         }
     }, [display])
 

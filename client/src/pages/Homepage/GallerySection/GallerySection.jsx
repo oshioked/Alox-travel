@@ -12,8 +12,9 @@ const GallerySection = () =>{
 
     useEffect(()=>{
         const tl = gsap.timeline({scrollTrigger:{
-            trigger: paraRef.current
-        }})
+            trigger: titleRef.current,
+        },
+        })
         
         tl
         .from([titleRef.current, paraRef.current], {
@@ -27,7 +28,8 @@ const GallerySection = () =>{
             opacity: 0,
             duration: 1
         }, '-=.3')
-    })
+        // tl.play();
+    }, [])
     return(
         <div className = 'gallery-section shade2bg'>
             <div className = 'container'>

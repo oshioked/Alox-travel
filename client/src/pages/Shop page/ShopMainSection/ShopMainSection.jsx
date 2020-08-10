@@ -1,13 +1,25 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef, useEffect} from 'react';
 import './ShopMainSection.scss';
-
+import gsap from 'gsap';
 import ShopProductCard from '../../../components/ShopProductCard/ShopProductCard';
 import {ThemeContext} from '../../../contextProviders/ThemeProvider/ThemeProvider';
 import ShopSearchBox from '../../../components/ShopSearchBox/ShopSearchBox';
 
 
 const ShopMainSection = ({isLoading, category, products}) =>{
+    const galleryRef = useRef(null);
     const {currentTheme} = useContext(ThemeContext)
+
+    useEffect(()=>{
+        gsap.fromTo(galleryRef.current, {
+            opacity: 0,
+        }, {
+            opacity: 1,
+            delay: .2,
+            ease: 'expo.inOut',
+            duration: .7,
+        })
+    }, [products])
     return(
         <div className = 'shop-main-section'>
             <div className = 'container'>
@@ -38,7 +50,7 @@ const ShopMainSection = ({isLoading, category, products}) =>{
                     </div>
                 </div>
                 <div className = 'gallery-container'>
-                    <div className = 'products-gallery'>
+                    <div ref= {galleryRef} className = 'products-gallery'>
                         {
                             !isLoading ?
                             products.filter(product => !product.recommended).map((product, i) =>(
