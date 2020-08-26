@@ -2,12 +2,12 @@
     
     .image-container{
         width: 100%;
-        // max-height: 100vh;
+        max-height: calc(100vh - 60px);
         
 
         img{
-            height: 100%;
             width: 100%;
+            height: auto;
         }
     }
 

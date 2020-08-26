@@ -1,50 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react'
 import OnImagesLoaded from 'react-on-images-loaded';
-import {useDispatch} from 'react-redux'
-import { setLoadingDisplay } from '../../Redux/LoadingScreen/loadingsreen.actions';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 const withLoading = (Page) => (images) =>{
-    const dispatch = useDispatch();
     const pageRef = useRef(null);
     const [loaded, setLoaded] = useState(false);
+    const [mountPage, setMountPage] = useState(true)
 
-    useEffect(() => {
-        console.log('withe loadeing set display to true');
-        // pageRef.current.style.visibility='hidden';
-        dispatch(setLoadingDisplay('true'))
-    }, [dispatch])
+    
+
+    const onLoaded = () =>{
+        setTimeout(()=>{
+            setLoaded(true)
+        }, 2000)
+    }
+    let Content = !mountPage ? ()=><div/> : Page;
 
     useEffect(() => {
         if(loaded){
-            // pageRef.current.style.visibility='visible';
+            setMountPage(false)
+            setTimeout(()=>{
+                setMountPage(true)
+            }, 400)            
         }
     }, [loaded])
-
-    useEffect(() => {
-        var images = new Array()
-        const preload = () => {
-            for (var i = 0; i < preload.arguments.length; i++) {
-                images[i] = new Image()
-                images[i].src = preload.arguments[i]
-            }
-        }
-        const allPreloadImgs = document.querySelectorAll('.preload');
-        console.log(allPreloadImgs);
-        // preload(
-        //     "http://localhost:3000/gallery/image-001.jpg",
-        //     "http://domain.tld/gallery/image-002.jpg",
-        //     "http://domain.tld/gallery/image-003.jpg"
-        // )
-    }, [])
-
-    const onLoaded = () =>{
-        
-        setTimeout(()=>{
-            console.log('withe loading set display to false')
-            dispatch(setLoadingDisplay('false'));
-            setLoaded(true)
-        }, 5000)
-    }
 
     return(
         <OnImagesLoaded
@@ -53,7 +32,8 @@ const withLoading = (Page) => (images) =>{
             timeout = {10000}
         >
             <div ref = {pageRef}>
-                <Page/>
+                <LoadingScreen display = {!loaded}/>
+                <Content loaded = {loaded}/>
             </div>
         </OnImagesLoaded>
     )

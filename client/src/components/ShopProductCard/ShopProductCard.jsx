@@ -64,7 +64,7 @@ const ShopProductCard = ({product}) =>{
                 
                 <div className = 'image-container'>
                     <div className = "image-inner">
-                        <img  ref = {imgRef} src = {product.imgSrc} alt = {product.name}/>
+                        <img width = '100%' height = '100%'  ref = {imgRef} src = {product.imgSrc} alt = {product.name}/>
                     </div>
                     <div style = {{position: 'fixed', top: '0', left: '0', bottom: '0'}} ref = {transBgRef} className  = "trans-background"/>
                 </div>

@@ -65,6 +65,11 @@
         .form-block{
             height: 100%;
             padding: 70px 5.5% 20px;
+            width: 100%;
+
+            button{
+                min-height: 40px;
+            }
 
             .form-container{
                 
@@ -167,7 +172,7 @@
         }
 
         .container{
-            max-width: 60%;
+            width: 58%;
             min-width: 650px;
             margin:0 auto;
             display: flex;

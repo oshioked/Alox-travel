@@ -26,10 +26,12 @@
 
                 .contain{
                     height: 100%;
+                    height: fill-available;
                     overflow: hidden;
 
                     .description-set{
                         height: 100%;
+                        height: fill-available;
         
         
                         .description-set-title,
@@ -57,7 +59,6 @@
                         left: 0;
                         z-index: -1;
                         max-height: 87%;
-        
                     }
                 }
                 
@@ -131,6 +132,8 @@
                             z-index: unset;
                             height: 100%;
                             max-height: 100%;
+
+                        min-height: fill-available;
                             
                         }
                         

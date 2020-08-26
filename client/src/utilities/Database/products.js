@@ -178,7 +178,30 @@ const products = [
         price: '$ 85',
         quantityAvailable: '110'
     },
-
+    {
+        id: 'p10',
+        name: 'Brown leather bag',
+        imgSrc: require('./images/brown leather bag.png'),
+        category: ['accessories'],
+        discount: '25%',
+        highPrice: '$ 140',
+        description: description,
+        recommended: true,
+        price: '$ 85',
+        quantityAvailable: '110'
+    },
+    {
+        id: 'p9',
+        name: 'Backpack set',
+        imgSrc: require('./images/backpack set.png'),
+        category: ['accessories', 'new in'],
+        discount: '25%',
+        highPrice: '$ 140',
+        description: description,
+        recommended: true,
+        price: '$ 85',
+        quantityAvailable: '110'
+    },
     {
         id: 'p12',
         name: 'The Self Adjusting Watch',

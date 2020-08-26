@@ -68,12 +68,12 @@ const Welcome2 = () =>{
             }, {
                 background: currentTheme === 'dark' ? '#191F29' : 'white',
                 duration:1
-            }, '-=.5')
-
+            }, '-=.5');
+            
             await gsap.to(imgRef.current, {
                 height: window.innerWidth <768 ? 'unset' : 'auto',
-                y: -(getImgBoundingBox().y - navBarBoundingBox.height),
-                x: window.innerWidth < 768 ? -getImgBoundingBox().x : -(getImgBoundingBox().x - (window.innerWidth * .08))  ,
+                y: -(getImgBoundingBox().y - navBarBoundingBox.height)||-(getImgBoundingBox().top - navBarBoundingBox.height),
+                x: window.innerWidth < 768 ? (-getImgBoundingBox().x)||(-getImgBoundingBox().left) : (-(getImgBoundingBox().x - (window.innerWidth * .08)))||(-(getImgBoundingBox().left - (window.innerWidth * .08)))  ,
                 duration: .5
             })
 

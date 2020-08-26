@@ -4,16 +4,12 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { useSelector } from 'react-redux';
 
-const LoadingScreen = () =>{
+const LoadingScreen = ({display}) =>{
     const {currentTheme} = useContext(ThemeContext);
     const logoRef = useRef(null);
-    const {display} = useSelector(state => state.loadingReducer)
     const screenRef = useRef(null);
-    const tl = useState(gsap.timeline({paused: true}))[0]
-    console.log(display);
-
+    const tl = useState(gsap.timeline({paused: true}))[0];
 
     useEffect(()=>{
         tl
@@ -33,10 +29,10 @@ const LoadingScreen = () =>{
     }, [tl])
 
     useEffect(()=>{
-        if(display === 'true'){
-            tl.play();
+        if(display){
+            tl.progress(1);
         }
-        if(display === 'false'){
+        if(!display){
             tl.reverse();
         }
     }, [display])

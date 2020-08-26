@@ -8,6 +8,7 @@ import {useLocation, useParams} from 'react-router-dom';
 import { useCallback } from 'react';
 import gsap from 'gsap';
 import { useRef } from 'react';
+import Navbar from '../../components/Navbar/Navbar';
 
 
 const ShopPage = () =>{
@@ -16,7 +17,6 @@ const ShopPage = () =>{
     const [isLoading, setIsLoading] = useState(true);
     const pageRef = useRef(null);
     const params = useParams();
-    console.log(params);
     const method = params.method;
     const key = params.key;
     const categoryName = key;
@@ -42,6 +42,7 @@ const ShopPage = () =>{
 
     return(
         <div ref = {pageRef} className = 'shop-page'>
+            <Navbar/>
             <div className = 'shop-page-container'>
                 <ShopInfoBar/>
                 <div className = 'body-container container'>

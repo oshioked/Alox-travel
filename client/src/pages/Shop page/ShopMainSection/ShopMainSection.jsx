@@ -4,11 +4,30 @@ import gsap from 'gsap';
 import ShopProductCard from '../../../components/ShopProductCard/ShopProductCard';
 import {ThemeContext} from '../../../contextProviders/ThemeProvider/ThemeProvider';
 import ShopSearchBox from '../../../components/ShopSearchBox/ShopSearchBox';
+import { useHistory } from 'react-router-dom';
 
+const categories = [
+    {
+        title: "New In",
+    }, 
+    {
+        title: "Backpacks",
+    }, 
+    {
+        title: "Crossbody bags",
+    },
+    {
+        title: "Luggages",
+    }, 
+    {
+        title: "Accessories",
+    }
+]
 
 const ShopMainSection = ({isLoading, category, products}) =>{
     const galleryRef = useRef(null);
-    const {currentTheme} = useContext(ThemeContext)
+    const {currentTheme} = useContext(ThemeContext);
+    const {push} = useHistory();
 
     useEffect(()=>{
         gsap.fromTo(galleryRef.current, {
@@ -34,10 +53,12 @@ const ShopMainSection = ({isLoading, category, products}) =>{
                     <div className = 'sort-cat-section'>
                     <div className = 'cat-select-container'>
                             <h5>CATEGORY: </h5>
-                            <select className = 'category-select'>
-                                <option>BACKPACKS</option>
-                                <option>LUGGAGES</option>
-                                <option>CROSSBODY BAGS</option>
+                            <select onChange = {(a)=>{push(`/shop/collections/${a.target.value}`)}} className = 'category-select'>
+                                {
+                                    categories.map((cat, i)=>(
+                                        <option value = {cat.title} key = {i}>{cat.title}</option>
+                                    ))
+                                }
                             </select>
                         </div>
                             <div >

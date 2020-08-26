@@ -36,7 +36,7 @@ const Welcome1 = () =>{
                                     btnLinkTo = '/shop/collections/Backpacks'
                                 />
                             </div>
-                            <img ref = {imgRef} alt = 'product-bag' src = {require('./welcome1Product.png')}/> 
+                            <img ref = {imgRef} alt = 'product-bag' src = {require('../../../assests/images/welcome1Product.png')}/> 
                         </div>
                     </div>
                 </div>

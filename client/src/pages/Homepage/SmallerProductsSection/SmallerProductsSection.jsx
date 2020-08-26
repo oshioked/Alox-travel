@@ -19,9 +19,10 @@ const SmallerProductsSection = () =>{
         const imgRef = img1ContRef.current.children[0];
         const tl = gsap.timeline();
 
-        const imgBoundingBox = img1ContRef.current.getBoundingClientRect();
+        const getImgBoundingBox = () =>{
+            return img1ContRef.current.children[0].getBoundingClientRect();
+        } 
     const navBarBoundingBox = document.querySelector('.main-nav-bar').getBoundingClientRect();
-        console.log(imgBoundingBox)
         await tl
         .to(img1ContRef.current, {
             height: imgRef.height,
@@ -44,11 +45,10 @@ const SmallerProductsSection = () =>{
             duration:1
         })
         .to(img1ContRef.current, {
-            height: window.innerWidth < 768 ? '100%' : 'auto',
             minWidth:  window.innerWidth < 768 ? 'calc(100vw)' : 'unset',
             width: window.innerWidth < 768 ? window.innerWidth : (window.innerWidth * .84 * .5) ,
-            x: window.innerWidth < 768 ? -imgBoundingBox.x : -(imgBoundingBox.x - (window.innerWidth * .08))  ,
-            y: -(imgBoundingBox.y - navBarBoundingBox.height),
+            x: window.innerWidth < 768 ? -getImgBoundingBox().x : -(getImgBoundingBox().x - (window.innerWidth * .08))  ,
+            y: -(getImgBoundingBox().y - navBarBoundingBox.height)||-(getImgBoundingBox().top - navBarBoundingBox.height),
             maxWidth: (window.innerHeight * 0.5),
             duration: 1,
             padding: '0',

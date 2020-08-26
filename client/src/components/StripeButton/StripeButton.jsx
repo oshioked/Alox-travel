@@ -43,7 +43,7 @@ const StripeCheckoutBtn = props =>{
             // closed={this.onClosed} // called when the checkout popin is closed (no IE6/7)
             // Note: `reconfigureOnUpdate` should be set to true IFF, for some reason
             // you are using multiple stripe keys
-            reconfigureOnUpdate={false}
+            // reconfigureOnUpdate={false}
             // Note: you can change the event to `onTouchTap`, `onClick`, `onTouchStart`
             // useful if you're using React-Tap-Event-Plugin
             // triggerEvent="onTouchTap"

@@ -67,7 +67,7 @@
             .checkout-button-container{
                 text-align: center;
                 position: absolute;
-                bottom: 0;
+                bottom: 25px;
                 right: 0;
                 left: 0;
                 
@@ -93,6 +93,8 @@
         .cart-menu-content{
             transition: 1s;
             transform: translateX(100%);
+
+
         }
         
     }
@@ -109,6 +111,10 @@
                 .section{
                     padding: 5.5% 7%;
 
+                }
+
+                .checkout-button-container{
+                    bottom: 0px
                 }
             }
             .menu-concealer{

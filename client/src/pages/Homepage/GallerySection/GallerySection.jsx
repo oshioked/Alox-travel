@@ -1,9 +1,41 @@
 import React from 'react';
 import './GallerySection.scss';
-import { posts } from './posts';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import gsap from 'gsap';
+
+export const posts = [
+    {
+        user: 'User1',
+        picture: require('../../../assests/images/homegallery/aloxgallery1.png'),
+        caption: ''
+    },
+    {
+        user: 'User2',
+        picture: require('../../../assests/images/homegallery/aloxgallery2.png'),
+        caption: ''
+    },
+    {
+        user: 'User3',
+        picture: require('../../../assests/images/homegallery/aloxgallery2.png'),
+        caption: ''
+    },
+    {
+        user: 'User4',
+        picture: require('../../../assests/images/homegallery/Aloxgallery4.png'),
+        caption: ''
+    },
+    {
+        user: 'User5',
+        picture: require('../../../assests/images/homegallery/Aloxgallery5.png'),
+        caption: ''
+    },
+    {
+        user: 'User5',
+        picture: require('../../../assests/images/homegallery/Aloxgallery5.png'),
+        caption: ''
+    }
+];
 
 const GallerySection = () =>{
     const slideRef = useRef(null);
@@ -36,7 +68,7 @@ const GallerySection = () =>{
                 <div className = 'gallery-section-content'>
                     <div className = 'titles'>
                         <h2 ref = {titleRef}>Alox travels along</h2>
-                        <p ref = {paraRef}>See a gallery of photos of fellow happy buyers. to get your image featured use hashtag #Aloxtravelsalong</p>
+                        <p ref = {paraRef}>See a gallery of photos of fellow happy buyers. To get your image featured use hashtag #Aloxtravelsalong</p>
                     </div>
                     <div className = 'gallery-row-container'>
                         <div className = ''>

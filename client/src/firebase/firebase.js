@@ -44,3 +44,15 @@ export const saveUserToFirestore = async (userAuth, otherData) =>{
     }
     return userRef;
 }
+
+export const saveDataToFirestore = async (collectionkey, objectsToAdd) =>{
+    const collectionRef = firestore.collection(collectionkey);
+
+    const batch = firestore.batch();
+    objectsToAdd.forEach(obj => {
+        const newDocRef = collectionRef.doc();
+        batch.set(newDocRef, obj)
+    })
+
+    return await batch.commit();
+}

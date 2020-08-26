@@ -9,8 +9,7 @@ const PlasticFreeSection = () =>{
                  <div className = 'plastic-free-section-content'>
                     <div className = 'titles'>
                         <h1>Plastic-free packaging</h1>
-                        <p>Because of ocean plastic pollution, all of our 
-                            product packaging is 100% plastic-free.
+                        <p>All of our product packaging is 100% plastic-free.
                         </p>
                     </div>
                  </div>

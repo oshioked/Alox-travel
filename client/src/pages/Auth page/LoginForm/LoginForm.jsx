@@ -4,7 +4,7 @@ import './LoginForm.scss';
 import SecButton from '../../../components/SecButton/SecButton';
 import AuthFormInput from '../../../components/AuthFormInput/AuthFormInput';
 import validate from 'validate.js';
-import { auth } from '../../../firebase/firebase';
+import { auth, signInWithGoogle } from '../../../firebase/firebase';
 
 
 const constraint = {
@@ -119,6 +119,12 @@ class LoginForm extends React.Component{
                         color = 'white'
                         style = {{width: '100%', marginTop: '20px' }}
                         onClick = {this.onLoginHandler}
+                    />
+                    <SecButton
+                        value = 'CONTINUE WITH GOOGLE'
+                        color = 'white'
+                        onClick = {signInWithGoogle}
+                        style = {{backgroundColor: '#4285f4', width: '100%', color: 'white', border: 'none', marginTop: '10px'}}
                     />
                     <p className = 'switch-form-bottom-text' style = {{fontSize: '13px', marginBottom: '30px', marginTop: '20px'}}>Don't have an account? <span onClick = {()=>{setCurrentForm('signup')}}>Sign up</span></p>
                 </div>

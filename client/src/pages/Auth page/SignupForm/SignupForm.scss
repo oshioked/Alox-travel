@@ -1,5 +1,12 @@
 .signup-form{
     height: 100%;
+    overflow-y: auto;
+    overflow-x: visible;
+    scrollbar-width: 7px;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
 
     .signup-form-content{
         height: 100%;

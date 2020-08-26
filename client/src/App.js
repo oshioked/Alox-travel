@@ -50,7 +50,6 @@ function App (){
 
   return (
     <div theme = {currentTheme} className = 'App shade1bg'>
-      <Navbar/>
       <SideMenu/>
       <CartMenu/>
       <LoadingScreen/>

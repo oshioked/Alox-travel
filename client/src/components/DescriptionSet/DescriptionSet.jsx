@@ -9,7 +9,7 @@ const DescriptionSet = ({title, btnLinkTo, onBtnClick, detail, btnValue}) =>{
     const btnContainerRef = useRef(null)
 
     useEffect(()=>{
-        const btnRef = btnContainerRef.current.firstElementChild;
+        const btnRef = btnContainerRef.current.children;
         const tl = gsap.timeline({scrollTrigger: {
             trigger: pRef.current,
             start: 'center bottom',
@@ -18,7 +18,7 @@ const DescriptionSet = ({title, btnLinkTo, onBtnClick, detail, btnValue}) =>{
         tl
             .from(titleRef.current, {duration: 1, opacity: 0, yPercent: 130, ease: 'power3.easeOut'})
             .from(pRef.current, {duration: .7, opacity: 0, y: 45, ease: 'power3.easeOut'}, '-=.5')
-            .from(btnRef, {duration: .5, opacity: 0, y: 45, ease: 'power3.easeOut'}, '-=.5')
+            .from(btnRef, {duration: .5, autoAlpha: 0})
     }, [])
 
     return(

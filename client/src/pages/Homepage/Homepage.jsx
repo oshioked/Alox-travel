@@ -10,14 +10,15 @@ import SmallerProductsSection from './SmallerProductsSection/SmallerProductsSect
 import './Homepage.css';
 import Footer from '../../components/Footer/Footer';
 import withLoading from '../../components/withLoading/withLoading';
+import Navbar from '../../components/Navbar/Navbar';
 
 
-const Homepage = () =>{
-    const homeRef = useRef(null);
+const Homepage = ({loaded}) =>{
    
     return(
-        <div ref = {homeRef} className = 'Homepage'>
-            <HomeHeader/>
+        <div className = 'Homepage'>
+            <Navbar/>
+            <HomeHeader loaded = {loaded}/>
             <Welcome1/>
             <Welcome2/>
             <SmallerProductsSection/>

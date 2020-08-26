@@ -7,6 +7,7 @@ import LoginForm from './LoginForm/LoginForm';
 import SignupForm from './SignupForm/SignupForm';
 import { ThemeContext } from '../../contextProviders/ThemeProvider/ThemeProvider';
 import withLoading from '../../components/withLoading/withLoading';
+import Navbar from '../../components/Navbar/Navbar';
 
 const AuthPage = ()=>{
     const containerRef = useRef(null);
@@ -93,6 +94,8 @@ const AuthPage = ()=>{
 
 
     return(
+        <>
+        <Navbar/>
         <div className = 'signup-and-login-page'>
             <div ref = {bgRef} id  = 'img-bg-container'/>
             <div className = 'image-darkener'/>
@@ -120,6 +123,7 @@ const AuthPage = ()=>{
             </div>
             
         </div>
+        </>
     )
 }
 
