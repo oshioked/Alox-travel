@@ -21,7 +21,6 @@ const categories = [
 ]
 
 const ShopSideSection = ({activeCategory}) =>{
-    console.log(activeCategory)
     return(
         <div className = 'side-section shade2bg'>
             <div className = 'container'>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, useContext} from 'react';
+import React, {useEffect, useRef, useContext} from 'react';
 import './Welcome2.scss';
 import gsap from 'gsap';
 import {useHistory} from 'react-router-dom';
@@ -12,7 +12,6 @@ const Welcome2 = () =>{
     const sectionRef = useRef(null);
     const detailsRef = useRef(null)
     const bgDarkenerRef = useRef(null);
-    const [clicked, setClicked] = useState(false);
     const {push} = useHistory();
     const {currentTheme} = useContext(ThemeContext);
 
@@ -78,7 +77,6 @@ const Welcome2 = () =>{
             })
 
             document.body.style.overflow = null
-            setClicked(false)
             push(`/product/${prodName}`);
             window.scrollTo(0, 0)
     }
@@ -87,7 +85,7 @@ const Welcome2 = () =>{
 
     return(
         <div ref = {sectionRef} className = 'welcome2'>
-            <img ref = {imgRef} src = {require('../../../assests/images/watch (1).png')} alt = 'watch'/>
+            <img ref = {imgRef} src = 'https://i.ibb.co/VgRLkBS/watch-1.png' alt = 'watch'/>
             <div style = {{position: 'fixed', top: '0', left: '0', bottom: '0'}} ref = {transBgRef} className  = "trans-background"/>
             <div ref = {bgDarkenerRef} style = {{opacity: 1}} className = 'image-darkener' />
             <div className = 'container'>

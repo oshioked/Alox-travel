@@ -29,7 +29,6 @@ export const saveUserToFirestore = async (userAuth, otherData) =>{
     const snapshot = await userRef.get();
     if(!snapshot.exists){
         const {displayName, email } = userAuth;
-        console.log(otherData)
         const createdAt = new Date();
         try {
             await userRef.set({
@@ -39,7 +38,7 @@ export const saveUserToFirestore = async (userAuth, otherData) =>{
                 ...otherData
             })            
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
     return userRef;

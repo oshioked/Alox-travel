@@ -24,7 +24,7 @@ const categories = [
     }
 ]
 
-const ShopMainSection = ({isLoading, category, products}) =>{
+const ShopMainSection = ({isLoading, method, entryKey, products}) =>{
     const galleryRef = useRef(null);
     const {currentTheme} = useContext(ThemeContext);
     const {push} = useHistory();
@@ -47,7 +47,7 @@ const ShopMainSection = ({isLoading, category, products}) =>{
                         <ShopSearchBox/>
                     </div>
                     <div className = 'cat-description'>
-                        <h1>{category.toUpperCase()}</h1>
+                        <h1>{method === 'search' ? `SEARCH RESULTS FOR "${entryKey}"` : entryKey.toUpperCase()}</h1>
                         <p>Ullamco sunt quis qui eiusmod ea officia. Consectetur commodo ad ad tempor incididunt ut et nulla. Qui aute laboris veniam dolor ullamco cillum cupidatat do amet sunt est minim magna esse.</p>
                     </div>
                     <div className = 'sort-cat-section'>

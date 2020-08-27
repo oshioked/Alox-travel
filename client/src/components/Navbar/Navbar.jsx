@@ -13,15 +13,6 @@ import gsap from 'gsap';
 
 const Navbar = () =>{
     const navRef = useRef(null);
-
-    useEffect(()=>{
-        const tl = gsap.timeline();
-        tl.from(navRef.current, {
-            duration: 1,
-            yPercent: -100,
-        })
-    }, [])
-    
     const {pathname} = useLocation();
     const [navbarTransparent, setNavbarTransparent] = useState(true);
     const [pagePathName, setPagePathName] = useState(pathname);
@@ -29,6 +20,15 @@ const Navbar = () =>{
     const toggleSideMenuDisplay = () =>{
         dispatch(ToggleSideMenuDisplay())
     }
+
+    useEffect(()=>{
+        const tl = gsap.timeline();
+        if(pagePathName.includes('/product/'))return;
+        tl.from(navRef.current, {
+            duration: 1,
+            yPercent: -100,
+        })
+    }, [pagePathName])
  
     useEffect(()=>{
         setPagePathName(pathname);

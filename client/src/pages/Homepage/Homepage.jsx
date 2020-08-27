@@ -1,4 +1,4 @@
-import React, { useRef  } from 'react';
+import React from 'react';
 import HomeHeader from './HomeHeader/HomeHeader';
 import Welcome1 from './Welcome1/Welcome1';
 import Welcome2 from './Welcome2/Welcome2';

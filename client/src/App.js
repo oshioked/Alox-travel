@@ -1,7 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 
 
-import Navbar from './components/Navbar/Navbar';
 import Homepage from './pages/Homepage/Homepage';
 import Collectionpage from './pages/Collection page/Collectionpage';
 import SideMenu from './components/SideMenu/SideMenu';

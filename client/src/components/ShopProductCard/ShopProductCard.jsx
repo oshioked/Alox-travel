@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import './ShopProductCard.scss';
 import { useHistory} from 'react-router-dom';
 import gsap from 'gsap';

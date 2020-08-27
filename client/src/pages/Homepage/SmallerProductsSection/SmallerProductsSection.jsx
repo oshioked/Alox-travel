@@ -18,6 +18,9 @@ const SmallerProductsSection = () =>{
         document.body.style.overflow = 'hidden'
         const imgRef = img1ContRef.current.children[0];
         const tl = gsap.timeline();
+        const getImgContBoundingBox = () =>{
+            return img1ContRef.current.getBoundingClientRect();
+        }
 
         const getImgBoundingBox = () =>{
             return img1ContRef.current.children[0].getBoundingClientRect();
@@ -47,15 +50,14 @@ const SmallerProductsSection = () =>{
         .to(img1ContRef.current, {
             minWidth:  window.innerWidth < 768 ? 'calc(100vw)' : 'unset',
             width: window.innerWidth < 768 ? window.innerWidth : (window.innerWidth * .84 * .5) ,
-            x: window.innerWidth < 768 ? -getImgBoundingBox().x : -(getImgBoundingBox().x - (window.innerWidth * .08))  ,
-            y: -(getImgBoundingBox().y - navBarBoundingBox.height)||-(getImgBoundingBox().top - navBarBoundingBox.height),
+            x: window.innerWidth < 768 ? -getImgContBoundingBox().left : -(getImgBoundingBox().left - (window.innerWidth * .08))  ,
+            y: -(getImgBoundingBox().top - navBarBoundingBox.height),
             maxWidth: (window.innerHeight * 0.5),
             duration: 1,
             padding: '0',
         }, '-=.7')
 
         document.body.style.overflow = null
-            // setClicked(false)
             push(`/product/Travel brown leather luggage`);
             window.scrollTo(0, 0)
     }
@@ -81,7 +83,7 @@ const SmallerProductsSection = () =>{
                     <div className = 'container'>
                             <div className = 'product-content'>
                                 <div ref = {img1ContRef} className = 'image-container'>
-                                    <img alt = 'productImg' src = {require('../../../assests/images/travelLengend.png')}/>
+                                    <img alt = 'productImg' src = 'https://i.ibb.co/wp3sJPN/travel-Lengend.png'/>
                                 </div>
                                 <div style = {{position: 'fixed', top: '0', left: '0', bottom: '0'}} ref = {transBgRef} className  = "trans-background"/>
                                 <DescriptionSet 

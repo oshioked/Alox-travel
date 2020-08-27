@@ -24,7 +24,7 @@ const products = [
     {
         id: 'p10',
         name: 'New Fire Backpack',
-        imgSrc: require('../../assests/images/firebackpack (1).png'),
+        imgSrc: 'https://i.ibb.co/vBpy3BQ/firebackpack-1.png',
         category: ['backpacks', 'new in'],
         discount: '25%',
         highPrice: '$ 140',
@@ -158,7 +158,7 @@ const products = [
     {
         id: 'p17',
         name: "Travel brown leather luggage",
-        imgSrc: require('../../assests/images/travelLengend.png'),
+        imgSrc: 'https://i.ibb.co/wp3sJPN/travel-Lengend.png',
         category: ['luggages', 'new in'],
         discount: '25%',
         highPrice: '$ 140',
@@ -205,7 +205,7 @@ const products = [
     {
         id: 'p12',
         name: 'The Self Adjusting Watch',
-        imgSrc: require('../../assests/images/watch (1).png'),
+        imgSrc: 'https://i.ibb.co/VgRLkBS/watch-1.png',
         category: ['accessories','new in'],
         discount: '25%',
         highPrice: '$ 140',

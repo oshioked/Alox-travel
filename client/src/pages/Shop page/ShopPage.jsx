@@ -4,7 +4,7 @@ import ShopInfoBar from './ShopInfoBar/ShopInfoBar';
 import ShopSideSection from './ShopSideSection/ShopSideSection';
 import ShopMainSection from './ShopMainSection/ShopMainSection';
 import products from '../../utilities/Database/products';
-import {useLocation, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import { useCallback } from 'react';
 import gsap from 'gsap';
 import { useRef } from 'react';
@@ -19,7 +19,6 @@ const ShopPage = () =>{
     const params = useParams();
     const method = params.method;
     const key = params.key;
-    const categoryName = key;
 
     useEffect(()=>{
         gsap.to(pageRef.current, {
@@ -31,10 +30,16 @@ const ShopPage = () =>{
 
     const fetchProduct = useCallback(() =>{
         setIsLoading(true);
-        const categoryProducts = products.filter(prod => prod.category.includes(categoryName.toLowerCase()));
-        setCatProducts(categoryProducts);
+        if(method === 'collections'){
+            const categoryProducts = products.filter(prod => prod.category.includes(key.toLowerCase()));
+            setCatProducts(categoryProducts);            
+        }else if(method === 'search'){
+            const searchResults = products.filter(prod => prod.name.toLowerCase().includes(key.toLowerCase()));
+            setCatProducts(searchResults)
+        }
+
         setIsLoading(false)
-    }, [categoryName] )
+    }, [key, method] )
     
     useEffect(()=>{
         fetchProduct();
@@ -46,8 +51,8 @@ const ShopPage = () =>{
             <div className = 'shop-page-container'>
                 <ShopInfoBar/>
                 <div className = 'body-container container'>
-                    <ShopSideSection activeCategory = {categoryName}/>
-                    <ShopMainSection isLoading = {isLoading} category = {categoryName} products = {catProducts}/>
+                    <ShopSideSection activeCategory = {key}/>
+                    <ShopMainSection isLoading = {isLoading} method = {method} entryKey = {key} products = {catProducts}/>
                 </div>
             </div>
         </div>
