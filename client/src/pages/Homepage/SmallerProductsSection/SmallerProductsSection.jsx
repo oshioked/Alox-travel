@@ -32,9 +32,6 @@ const SmallerProductsSection = () =>{
         await tl
         .to(img1ContRef.current, {
             padding: '0',
-            duration: .5
-        })
-        .to(img1ContRef.current, {
             height: imgRef.height,
             duration: .5
         })
@@ -58,13 +55,10 @@ const SmallerProductsSection = () =>{
             minWidth:  window.innerWidth < 768 ? 'calc(100vw)' : 'unset',
             width: window.innerWidth < 768 ? window.innerWidth : (window.innerWidth * .84 * .5) ,
             maxWidth: (window.innerHeight * 0.5),
-            duration: 1,
-        }, '-=.7')
-        .to(imgRef, {
             x: window.innerWidth < 768 ? -getImgContBoundingBox().left : -(getImgBoundingBox().left - (window.innerWidth * .08))  ,
             y: -(getImgBoundingBox().top - getNavbarBoundingBox().height),
             duration: 1,
-        })
+        }, '-=.7')
 
         document.body.style.overflow = null
             push(`/product/Travel brown leather luggage`);
