@@ -32,8 +32,8 @@ const SmallerProductsSection = () =>{
         await tl
         .to(img1ContRef.current, {
             padding: '0',
+            duration: .5,
             height: imgRef.height,
-            duration: .5
         })
         .set(img1ContRef.current, {
             overflow: 'visible',

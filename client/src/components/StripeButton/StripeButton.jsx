@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const StripeCheckoutBtn = props =>{
     const {price} = props;
+    console.log(price)
     const stripeKey = 'pk_test_QOhWjhjQaBSOYl33QeYr8dn300s8WTvdFa';
     const onToken = (token) =>{
         axios({
