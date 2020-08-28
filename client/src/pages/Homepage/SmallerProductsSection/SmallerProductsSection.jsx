@@ -25,8 +25,15 @@ const SmallerProductsSection = () =>{
         const getImgBoundingBox = () =>{
             return img1ContRef.current.children[0].getBoundingClientRect();
         } 
-    const navBarBoundingBox = document.querySelector('.main-nav-bar').getBoundingClientRect();
+
+        const getNavbarBoundingBox = () =>{
+            return document.querySelector('.main-nav-bar').getBoundingClientRect();
+        } 
         await tl
+        .to(img1ContRef.current, {
+            padding: '0',
+            duration: .5
+        })
         .to(img1ContRef.current, {
             height: imgRef.height,
             duration: .5
@@ -50,12 +57,14 @@ const SmallerProductsSection = () =>{
         .to(img1ContRef.current, {
             minWidth:  window.innerWidth < 768 ? 'calc(100vw)' : 'unset',
             width: window.innerWidth < 768 ? window.innerWidth : (window.innerWidth * .84 * .5) ,
-            x: window.innerWidth < 768 ? -getImgContBoundingBox().left : -(getImgBoundingBox().left - (window.innerWidth * .08))  ,
-            y: -(getImgBoundingBox().top - navBarBoundingBox.height),
             maxWidth: (window.innerHeight * 0.5),
             duration: 1,
-            padding: '0',
         }, '-=.7')
+        .to(imgRef, {
+            x: window.innerWidth < 768 ? -getImgContBoundingBox().left : -(getImgBoundingBox().left - (window.innerWidth * .08))  ,
+            y: -(getImgBoundingBox().top - getNavbarBoundingBox().height),
+            duration: 1,
+        })
 
         document.body.style.overflow = null
             push(`/product/Travel brown leather luggage`);

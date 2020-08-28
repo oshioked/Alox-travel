@@ -99,7 +99,7 @@ const CartMenu = ()=>{
                                         border: 'none'
                                     }
                                 }
-                                linkTo = '/shop/collection/New In'
+                                linkTo = '/shop/collections/New In'
                                 onClick = {toggleDisplay}
                             />
                             
