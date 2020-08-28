@@ -1,25 +1,25 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, lazy, Suspense} from 'react';
 
-
-import Homepage from './pages/Homepage/Homepage';
-import Collectionpage from './pages/Collection page/Collectionpage';
 import SideMenu from './components/SideMenu/SideMenu';
 import CartMenu from './components/CartMenu/CartMenu';
-import ShopPage from './pages/Shop page/ShopPage';
-import ProductDetailsPage from './pages/ProductDetails page/ProductDetailsPage';
-import CheckoutPage from './pages/Checkout page/CheckoutPage';
 
 
 import {Switch, Route, Redirect, useHistory}  from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux'
 import { ThemeContext } from './contextProviders/ThemeProvider/ThemeProvider';
 import './App.scss';
-import AuthPage from './pages/Auth page/AuthPage';
 import { auth, saveUserToFirestore } from './firebase/firebase';
 import { authUser, logUserOut } from './Redux/User/user.actions';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import ProductDetailsPage from './pages/ProductDetails page/ProductDetailsPage';
+
+const Homepage = lazy(()=>import('./pages/Homepage/Homepage'));
+const Collectionpage = lazy(()=>import('./pages/Collection page/Collectionpage'));
+const ShopPage = lazy(()=>import('./pages/Shop page/ShopPage'));
+const CheckoutPage = lazy(()=>import('./pages/Checkout page/CheckoutPage'));
+const AuthPage = lazy(()=>import('./pages/Auth page/AuthPage'));
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -53,17 +53,19 @@ function App (){
       <CartMenu/>
       <LoadingScreen/>
         <Switch>
-          <Route exact path = '/' component = {Homepage}/>
-          <Route exact path = '/shop/:method/:key' component = {ShopPage}/>
-          <Route exact path = '/collection' component = {Collectionpage}/>
-          <Route exact path = '/login' render = {()=> 
-            isUserSignedIn
-            ? (<Redirect to = '/'/>)
-            : (<AuthPage/>)
-          }
-          />
+          <Suspense fallback = {<LoadingScreen display = {true}/>}>
+            <Route exact path = '/' component = {Homepage}/>
+            <Route exact path = '/shop/:method/:key' component = {ShopPage}/>
+            <Route exact path = '/collection' component = {Collectionpage}/>
+            <Route exact path = '/login' render = {()=> 
+              isUserSignedIn
+              ? (<Redirect to = '/'/>)
+              : (<AuthPage/>)
+            }
+            />
+            <Route exact path = '/checkout' component = {CheckoutPage}/>
           <Route exact path = '/product/:id' component = {ProductDetailsPage}/>
-          <Route exact path = '/checkout' component = {CheckoutPage}/>
+          </Suspense>
         </Switch>
     </div>
   )

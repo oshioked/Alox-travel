@@ -30,7 +30,7 @@ const LoadingScreen = ({display}) =>{
 
     useEffect(()=>{
         if(display){
-            tl.progress(0.3).play();
+            tl.progress(1).play();
         }
         if(!display){
             tl.reverse();
