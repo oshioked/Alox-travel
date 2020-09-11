@@ -86,7 +86,7 @@ const SmallerProductsSection = () =>{
                     <div className = 'container'>
                             <div className = 'product-content'>
                                 <div ref = {img1ContRef} className = 'image-container'>
-                                    <img alt = 'productImg' src = 'https://i.ibb.co/wp3sJPN/travel-Lengend.png'/>
+                                    <img alt = 'productImg' src = 'https://i.ibb.co/J263xZ3/travLen.jpg'/>
                                 </div>
                                 <div style = {{position: 'fixed', top: '0', left: '0', bottom: '0'}} ref = {transBgRef} className  = "trans-background"/>
                                 <DescriptionSet 
