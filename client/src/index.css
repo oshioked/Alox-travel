@@ -5,7 +5,9 @@ html,body{
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-
+}
+body{
+	overflow-y: scroll;
 }
 *{
 	box-sizing: border-box;
