@@ -14,10 +14,10 @@ const BrandSection = () =>{
                         <Github/>
                     </div>
                     <div className = 'brand'>
-                        <IconMonstr/>
+                        <ReactIcon/>
                     </div>
                     <div className = 'brand'>
-                        <ReactIcon/>
+                        <IconMonstr/>
                     </div>
                 </div>    
             </div>

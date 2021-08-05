@@ -7,15 +7,11 @@ export const ThemeContext = createContext({
 })
 
 const ThemeProvider = ({children}) =>{
-
-
-    const [currentTheme, setCurrentTheme] = 
-        useState(
-            Boolean(window.localStorage.getItem('currentTheme')) 
-            ? window.localStorage.getItem('currentTheme')
-            : 'light'
-        );
-
+    const [currentTheme, setCurrentTheme] = useState(
+        Boolean(window.localStorage.getItem('currentTheme')) 
+        ? window.localStorage.getItem('currentTheme')
+        : 'light'
+    );
 
     const toggleTheme = () =>{
         if(currentTheme === 'dark'){

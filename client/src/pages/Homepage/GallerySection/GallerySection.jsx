@@ -17,7 +17,7 @@ export const posts = [
     },
     {
         user: 'User3',
-        picture: require('../../../assests/images/homegallery/aloxgallery2.png'),
+        picture: require('../../../assests/images/homegallery/Aloxgallery3.png'),
         caption: ''
     },
     {

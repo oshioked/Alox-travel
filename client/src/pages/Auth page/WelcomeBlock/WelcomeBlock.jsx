@@ -17,7 +17,7 @@ const WelcomeBlock = ({setCurrentForm, setWelcomeBlockDisplay, setFormBlockDispl
                 </div>
                 <h1>Welcome</h1>
                 {
-                    <>
+                    currentForm === 'login' ?
                         <SecButton
                             value = 'SIGN UP'
                             style = {{width: '250px'}}
@@ -27,6 +27,7 @@ const WelcomeBlock = ({setCurrentForm, setWelcomeBlockDisplay, setFormBlockDispl
                                 setFormBlockDisplay('true')
                             }}
                         />
+                    :
                         <SecButton
                             value = 'LOG IN'
                             style = {{width: '250px'}}
@@ -36,7 +37,6 @@ const WelcomeBlock = ({setCurrentForm, setWelcomeBlockDisplay, setFormBlockDispl
                                 setFormBlockDisplay('true')
                             }}
                         />
-                    </>
                 }
                 
             </div>

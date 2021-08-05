@@ -21,7 +21,7 @@
                 .gallery-row{
                     display: flex;
                     overflow: scroll;
-                    max-height: 220px;
+                    max-height: 250px;
 
                     &::-webkit-scrollbar{
                         display: none;
@@ -33,7 +33,7 @@
                         margin: 0 10px;
                         display: flex;
                         width: fit-content;
-                        min-width: 220px;
+                        min-width: 250px;
 
                         &:first-child{
                             margin-left: 0;

@@ -7,7 +7,23 @@ import {connect, useDispatch, useSelector} from 'react-redux';
 import {ToggleSideMenuDisplay} from '../../Redux/SideMenu/sideMenu.actions.js'
 import ThemeTogglerIcon from '../ThemeTogglerIcon/ThemeTogglerIcon';
 
-import {AloxIcon, CancelBtn, HomeIcon, SearchIcon, CollectionIcon, PaymentIcon, BillingInfo, OrderIcon, UserIcon, LanguageIcon, ThemeIcon, NotificationIcon, HelpIcon, ReportIcon, LogoutIcon} from '../SvgComponents/Svgs';
+import {
+    AloxIcon,
+    CancelBtn,
+    HomeIcon,
+    SearchIcon,
+    CollectionIcon,
+    PaymentIcon,
+    BillingInfo,
+    OrderIcon,
+    UserIcon,
+    LanguageIcon,
+    ThemeIcon,
+    NotificationIcon,
+    HelpIcon,
+    ReportIcon,
+    LogoutIcon
+} from '../SvgComponents/Svgs';
 import SearchBox from '../SearchBox/SearchBox';
 import { auth } from '../../firebase/firebase';
 

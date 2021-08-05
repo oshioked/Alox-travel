@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const StripeCheckoutBtn = props =>{
     const {price} = props;
-    console.log(price)
     const stripeKey = 'pk_test_QOhWjhjQaBSOYl33QeYr8dn300s8WTvdFa';
     const onToken = (token) =>{
         axios({
@@ -21,7 +20,7 @@ const StripeCheckoutBtn = props =>{
         <StripeCheckout
             name = "Alox"
             description = {`Your total price is $${price}`}
-            image = 'https://i.ibb.co/XzcwL5s/black-shearling.png'
+            // image = 'https://i.ibb.co/XzcwL5s/black-shearling.png'
             ComponentClass = 'stripe-pop-up'
             label="Buy the Thing" // text inside the Stripe button
             panelLabel="Give Money" // prepended to the amount in the bottom pay button
