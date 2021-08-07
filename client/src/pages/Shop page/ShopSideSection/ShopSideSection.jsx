@@ -34,6 +34,40 @@ const ShopSideSection = ({activeCategory}) =>{
                         }
                     </ul>
                 </div>
+                <div className = 'option-block'>
+                    <h3 className = "option-title-text">FILTER BY</h3>
+                    <div className = "filter-options">
+                        <div className = "color-option">
+                            <p>Color: </p>
+                            <div className = 'colors-container'>
+                                {
+                                    ['#97B7D0', '#884A2B', 'black', '#C98C19', '#323A52', '#531717'].map((color, i) =>(
+                                        <div key = {color} style = {{backgroundColor: color}} className = "color"/>
+                                    ))                                    
+                                }
+
+                            </div>
+                        </div>
+                        <div className = "material-option">
+                            <p>Material: </p>
+                            <div className = 'materials-container'>
+                                {
+                                    ['Leather', 'Cotton'].map((material, i) =>(
+                                        <div key = {material} className = "material">
+                                            <div className = "checkbox"/>
+                                            <p>{material}</p>
+                                        </div>
+                                    ))                                    
+                                }
+
+                            </div>
+                        </div>
+                        <div className = "waterProof">
+                            <div className = "checkbox"/>
+                            <p>Water proof</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

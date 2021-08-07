@@ -12,6 +12,7 @@ export const ToggleCartDisplay = () =>{
 }
     
 export const AddItemToCart = (item) =>{
+    console.log(item)
     return({
         type: cartTypes.ADD_ITEM_TO_CART,
         payload: item

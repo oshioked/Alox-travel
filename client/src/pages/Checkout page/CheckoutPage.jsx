@@ -73,7 +73,7 @@ const CheckoutPage = () =>{
                 ))
             }
             <div className = "checkout-button-container"> 
-                <StripeCheckoutBtn price = {totalPrice}  />
+                <StripeCheckoutBtn image = {cartItems[0] ? cartItems[0].imgSrc : null} price = {totalPrice}/>
             </div>
         </div>
         </>

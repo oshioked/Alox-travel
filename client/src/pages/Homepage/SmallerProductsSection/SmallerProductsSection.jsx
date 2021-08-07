@@ -92,7 +92,7 @@ const SmallerProductsSection = () =>{
                                 <DescriptionSet 
                                     title = 'The Travel Legend'
                                     detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
-                                    btnValue = 'ORDER NOW'  
+                                    btnValue = 'BUY NOW'  
                                     onBtnClick = {animateToProductDetails}                     
                                 />
                                 <div className = 'description-set pc'>
@@ -100,7 +100,7 @@ const SmallerProductsSection = () =>{
                                         title = 'The Travel Legend'
                                         onBtnClick = {animateToProductDetails}
                                         detail = 'A legendary travel bag which was previously out of stock returns, by request. Many customers asked us to bring it back; we listened, upgraded it, and relaunched it.'
-                                        btnValue = 'ORDER NOW'
+                                        btnValue = 'BUY NOW'
                                     />
                                 </div>
                             </div>

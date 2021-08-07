@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
 const StripeCheckoutBtn = props =>{
-    const {price} = props;
+    const {price, image} = props;
     const stripeKey = 'pk_test_QOhWjhjQaBSOYl33QeYr8dn300s8WTvdFa';
     const onToken = (token) =>{
         axios({
@@ -20,14 +20,14 @@ const StripeCheckoutBtn = props =>{
         <StripeCheckout
             name = "Alox"
             description = {`Your total price is $${price}`}
-            // image = 'https://i.ibb.co/XzcwL5s/black-shearling.png'
+            image = {[image, image]}
             ComponentClass = 'stripe-pop-up'
             label="Buy the Thing" // text inside the Stripe button
             panelLabel="Give Money" // prepended to the amount in the bottom pay button
             amount={1000000} // cents
             currency="USD"
             stripeKey = {stripeKey}
-            email="info@vidhub.co"
+            email="support@alox.com"
             // Note: Enabling either address option will give the user the ability to
             // fill out both. Addresses are sent as a second parameter in the token callback.
             shippingAddress

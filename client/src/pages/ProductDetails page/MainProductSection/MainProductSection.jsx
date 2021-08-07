@@ -30,6 +30,7 @@ const MainProductSection = ({product, addItemToCart}) =>{
                 duration: .5
             })
     }, [])
+    console.log(product)
 
 
     const {currentTheme} = useContext(ThemeContext)
