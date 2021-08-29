@@ -5,7 +5,7 @@ Some features contained in this app includes,
 2. Firebase Authentication.
 3. The coolest animations and page transitions ever.
 4. Redux.
-5. Theme toggle.
+5. Theme toggle using react context.
 6. Stripe payment Integration.
 7. Responsive design.
 8. Mobile First Styling.
