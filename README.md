@@ -11,3 +11,5 @@ Some features contained in this app includes,
 8. Mobile First Styling.
 9. Accessible and performant.
 10. 100% custom scalable component library for fluency across the application.
+
+Check out a detailed case study of this project <a href = "https://oshioke.vercel.app/alox">here</a>
